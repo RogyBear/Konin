@@ -86,23 +86,33 @@ class Calendar extends Component {
 	handleDays(month = this.state.displayMonth, year = this.state.displayYear) {
 		let date = new Date(year, month, 1);
 		let days = [];
+		let rowUI =[[],[],[],[],[]]
+		let daysUI;
+
 		let numDays = 32 - new Date(year, month, 32).getDate();
 		for (let i = 0; i < numDays; i++) {
 			days.push(date.getDate() + i);
 		}
-		// return(
-		// 	this.setState()
-		// )
-	}
+		daysUI = days.map((el) => {
+				
+				retrun (<div>{el}</div>)
+			
+		});
 
+		// Problem: put all of the span elements into dive elements.
+		// Once there are 7 span elements in 1 dev element,
+		// create a new div element and push the remaining span elements into those divs.
+		// Once all of the divs have been filled, return the final result
+		// Solution:
+		// 1. push the spans into
+		return daysUI;
+	}
 	render() {
 		return (
 			<div>
 				<h1>Calendar</h1>
-				
 				<h3>{this.handleMonth()}</h3>
-
-				{this.handleDays()}
+				<div>{this.handleDays()}</div>
 			</div>
 		);
 	}
