@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-
+import { getDay, getDaysInMonth, startOfMonth } from 'date-fns';
+import './Calendar.css';
 class Calendar extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			displayMonth: this.props.month,
-			displayYear: this.props.year,
-			displayDays: []
+			displayYear: this.props.year
 		};
 		this.handleData = this.handleData.bind(this);
 		this.handleDays = this.handleDays.bind(this);
@@ -17,11 +17,15 @@ class Calendar extends Component {
 		const { name, value } = event.target;
 		if (value === 'inc') {
 			return this.setState((prevState) => {
-				return { [name]: prevState.displayMonth + 1 };
+				return {
+					[name]: prevState.displayMonth + 1
+				};
 			});
 		} else if (value === 'dec') {
 			return this.setState((prevState) => {
-				return { [name]: prevState.displayMonth - 1 };
+				return {
+					[name]: prevState.displayMonth - 1
+				};
 			});
 		} else if (value === 'minusOneYear') {
 			return this.setState((prevState) => {
@@ -61,24 +65,22 @@ class Calendar extends Component {
 		];
 
 		return (
-			<div>
+			<div className="month-selector">
 				<button
+					className="reverse-btn"
 					name="displayMonth"
 					value={this.state.displayMonth === 0 ? 'minusOneYear' : 'dec'}
 					onClick={this.handleData}
-				>
-					Go back!
-				</button>
+				/>
 				<h3>
 					{months[this.state.displayMonth]} {this.state.displayYear}
 				</h3>
 				<button
+					className="forward-btn"
 					name="displayMonth"
 					value={this.state.displayMonth === 11 ? 'addOneYear' : 'inc'}
 					onClick={this.handleData}
-				>
-					Go forward
-				</button>
+				/>
 			</div>
 		);
 	}
@@ -86,33 +88,45 @@ class Calendar extends Component {
 	handleDays(month = this.state.displayMonth, year = this.state.displayYear) {
 		let date = new Date(year, month, 1);
 		let days = [];
-		let rowUI =[[],[],[],[],[]]
 		let daysUI;
+		let startDay = getDay(startOfMonth(new Date(year, month))) + 1;
 
-		let numDays = 32 - new Date(year, month, 32).getDate();
+		const styles = {
+			gridColumnStart: 0
+		};
+		let numDays = getDaysInMonth(new Date(year, month));
 		for (let i = 0; i < numDays; i++) {
 			days.push(date.getDate() + i);
 		}
-		daysUI = days.map((el) => {
-				
-				retrun (<div>{el}</div>)
-			
+		daysUI = days.map((el, i) => {
+			if (i === 0) {
+				styles.gridColumnStart = startDay;
+				return (
+					<div style={styles} className="day">
+						{el}
+					</div>
+				);
+			} else {
+				return <div className="day">{el}</div>;
+			}
 		});
 
-		// Problem: put all of the span elements into dive elements.
-		// Once there are 7 span elements in 1 dev element,
-		// create a new div element and push the remaining span elements into those divs.
-		// Once all of the divs have been filled, return the final result
-		// Solution:
-		// 1. push the spans into
 		return daysUI;
 	}
 	render() {
 		return (
-			<div>
-				<h1>Calendar</h1>
-				<h3>{this.handleMonth()}</h3>
-				<div>{this.handleDays()}</div>
+			<div className="calendar">
+				{this.handleMonth()}
+				<div
+					style={{
+						display: 'grid',
+						gridTemplateColumns: 'repeat(7, 40px)',
+						gridTemplateRows: 'repeat(6, 40px)',
+						fontFamily: 'sans-serif'
+					}}
+				>
+					{this.handleDays()}
+				</div>
 			</div>
 		);
 	}

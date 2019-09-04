@@ -1,0 +1,24 @@
+.day {
+	background: #00afc6;
+	border-radius: 50%;
+	margin: 3px;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 15px;
+}
+.month-selector {
+	display: flex;
+}
+
+.calendar {
+	display: flex;
+}
+
+.forward-btn {
+	background-color: green;
+}
+.reverse-btn {
+	background-color: red;
+}
