@@ -10,15 +10,43 @@
 }
 .month-selector {
 	display: flex;
+	height: 50px;
+	justify-content: space-around;
+	align-items: center;
+	width: 250px;
+	font-family: 'Circe', 'sans-serif';
+	font-size: 15px;
+	line-height: 22px;
+	letter-spacing: -0.01em;
+	transform: rotate(-90deg);
+	align-self: center;
+	margin-bottom: 30px;
+	margin-right: -100px;
 }
 
 .calendar {
 	display: flex;
+	padding-top: 10px;
 }
 
 .forward-btn {
-	background-color: green;
+	border-left: 10px solid #e9487e;
+	border-right: 0px solid transparent;
 }
 .reverse-btn {
-	background-color: red;
+	border-right: 10px solid #e9487e;
+	border-left: 0px solid transparent;
+}
+
+.forward-btn,
+.reverse-btn{
+    width: 0;
+	height: 0;
+    background: transparent;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+}
+.forward-btn:focus,
+.reverse-btn:focus {
+	outline: none;
 }
