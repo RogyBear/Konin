@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getDay, getDaysInMonth, startOfMonth } from 'date-fns';
+import { getDay, getDaysInMonth, startOfMonth, format } from 'date-fns';
 import './Calendar.css';
 import { gapi } from 'gapi-script';
 
@@ -8,13 +8,13 @@ class Calendar extends Component {
 		super(props);
 
 		this.state = {
-			displayMonth: this.props.month,
-			displayYear: this.props.year,
-			events: []
+			displayMonth: new Date().getMonth(),
+			displayYear: new Date().getFullYear()
 		};
 		this.handleData = this.handleData.bind(this);
 		this.handleDays = this.handleDays.bind(this);
-		this.handleMonth = this.handleMonth.bind(this);
+		
+		// this.handleDate = this.handleDate.bind(this);
 	}
 
 	// Google Calendar API
@@ -24,7 +24,6 @@ class Calendar extends Component {
 	};
 
 	getEvents() {
-
 		let that = this;
 		function start() {
 			gapi.client
@@ -39,16 +38,13 @@ class Calendar extends Component {
 				.then(
 					(response) => {
 						let events = response.result.items;
-						that.setState(
-							{
-								events
-							},
-							() => {
-								
-								console.log(that.state.events);
-								
-							}
-						);
+						let eventDates = [];
+						for (let i = 0; i < events.length; i++) {
+							eventDates.push(events[i].start);
+						}
+						that.setState({
+							eventDates
+						});
 					},
 					function(reason) {
 						console.log(reason);
@@ -60,93 +56,59 @@ class Calendar extends Component {
 
 	//End Google Calendar API
 
+	// Correctly update the days in the month
+
 	handleData(event) {
-		const { name, value } = event.target;
-		if (value === 'inc') {
-			return this.setState((prevState) => {
-				return {
-					[name]: prevState.displayMonth + 1
-				};
-			});
-		} else if (value === 'dec') {
-			return this.setState((prevState) => {
-				return {
-					[name]: prevState.displayMonth - 1
-				};
-			});
-		} else if (value === 'minusOneYear') {
-			return this.setState((prevState) => {
-				return {
-					displayYear: prevState.displayYear - 1,
-					displayMonth: (prevState.displayMonth = 11)
-				};
-			});
-		} else if (value === 'addOneYear') {
-			return this.setState((prevState) => {
-				return {
-					displayYear: prevState.displayYear + 1,
-					displayMonth: (prevState.displayMonth = 0)
-				};
-			});
-		} else {
-			return this.setState({
-				[name]: value
-			});
-		}
+		const { value } = event.target;
+		let data;
+		this.setState((prevState) => {
+			switch (value) {
+				case 'inc':
+					data = { displayMonth: prevState.displayMonth + 1 };
+					break;
+				case 'dec':
+					data = { displayMonth: prevState.displayMonth - 1 };
+					break;
+				case 'minusOneYear':
+					data = {
+						displayYear: prevState.displayYear - 1,
+						displayMonth: 11
+					};
+					break;
+				case 'addOneYear':
+					data = {
+						displayYear: prevState.displayYear + 1,
+						displayMonth: 0
+					};
+					break;
+				default:
+					break;
+			}
+			return data;
+		});
 	}
 
-	handleMonth() {
-		let months = [
-			'January',
-			'February',
-			'March',
-			'April',
-			'May',
-			'June',
-			'July',
-			'August',
-			'September',
-			'October',
-			'November',
-			'December'
-		];
-
-		return (
-			<div className="month-selector">
-				<button
-					className="reverse-btn"
-					name="displayMonth"
-					value={this.state.displayMonth === 0 ? 'minusOneYear' : 'dec'}
-					onClick={this.handleData}
-				/>
-
-				<h3>
-					{months[this.state.displayMonth]} {this.state.displayYear}
-				</h3>
-				<button
-					className="forward-btn"
-					name="displayMonth"
-					value={this.state.displayMonth === 11 ? 'addOneYear' : 'inc'}
-					onClick={this.handleData}
-				/>
-			</div>
-		);
-	}
-
-	handleDays(month = this.state.displayMonth, year = this.state.displayYear) {
-		let date = new Date(year, month, 1);
+	static getDerivedStateFromProps(props, state) {
 		let days = [];
-		let daysUI;
-		let startDay = getDay(startOfMonth(new Date(year, month)));
+		let month = state.displayMonth;
+		let year = state.displayYear;
+		for (let i = 1; i <= getDaysInMonth(new Date(state.displayYear, state.displayMonth)); i++) {
+			days.push(format(new Date(year, month, i), 'yyyy-MM-dd'));
+		}
 
+		return {
+			daysInMonth: [ ...days ]
+		};
+	}
+
+	handleDays() {
+		let daysUI;
+		let startDay = getDay(startOfMonth(new Date(this.state.displayYear, this.state.displayMonth)));
 		const styles = {
 			gridColumnStart: startDay
 		};
-		let numDays = getDaysInMonth(new Date(year, month));
-		for (let i = 0; i < numDays; i++) {
-			days.push(date.getDate() + i);
-		}
-		daysUI = days.map((el, i) => {
+
+		daysUI = this.state.daysInMonth.map((el, i) => {
 			if (i === 0) {
 				styles.gridColumnStart = startDay;
 				return (
@@ -161,10 +123,29 @@ class Calendar extends Component {
 
 		return daysUI;
 	}
+	
 	render() {
 		return (
 			<div className="calendar">
-				{this.handleMonth()}
+				<div className="month-selector">
+					<button
+						className="reverse-btn"
+						name="displayMonth"
+						value={this.state.displayMonth === 0 ? 'minusOneYear' : 'dec'}
+						onClick={this.handleData}
+					/>
+
+					<h3>
+						{(format(new Date(this.state.displayYear, this.state.displayMonth), 'MMMM yyyy'))}
+					</h3>
+
+					<button
+						className="forward-btn"
+						name="displayMonth"
+						value={this.state.displayMonth === 11 ? 'addOneYear' : 'inc'}
+						onClick={this.handleData}
+					/>
+				</div>
 				<div
 					style={{
 						display: 'grid',
