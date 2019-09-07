@@ -9,11 +9,12 @@ class Calendar extends Component {
 
 		this.state = {
 			displayMonth: new Date().getMonth(),
-			displayYear: new Date().getFullYear()
+			displayYear: new Date().getFullYear(),
+			eventDates: []
 		};
 		this.handleData = this.handleData.bind(this);
 		this.handleDays = this.handleDays.bind(this);
-		
+
 		// this.handleDate = this.handleDate.bind(this);
 	}
 
@@ -40,7 +41,11 @@ class Calendar extends Component {
 						let events = response.result.items;
 						let eventDates = [];
 						for (let i = 0; i < events.length; i++) {
-							eventDates.push(events[i].start);
+							if (events[i].start.date) {
+								eventDates.push(events[i].start.date);
+							} else if (events[i].start.dateTime) {
+								eventDates.push(events[i].start.dateTime);
+							}
 						}
 						that.setState({
 							eventDates
@@ -108,22 +113,37 @@ class Calendar extends Component {
 			gridColumnStart: startDay
 		};
 
+		//filtered array to return styles
+
+		let testDaysUI;
+		testDaysUI = this.state.daysInMonth.map((el) => {
+			let y = this.state.eventDates.map((bo) => {
+				return bo;
+			});
+			console.log( el);
+			console.log(y[0]);
+			if (el === y[0]) {
+				return `this is el: ${el} and this is bo: ${y}`;
+			}
+		});
+		console.log(testDaysUI);
+
 		daysUI = this.state.daysInMonth.map((el, i) => {
 			if (i === 0) {
 				styles.gridColumnStart = startDay;
 				return (
 					<div style={styles} className="day">
-						{el}
+						{i + 1}
 					</div>
 				);
 			} else {
-				return <div className="day">{el}</div>;
+				return <div className="day">{i + 1}</div>;
 			}
 		});
 
 		return daysUI;
 	}
-	
+
 	render() {
 		return (
 			<div className="calendar">
@@ -135,9 +155,7 @@ class Calendar extends Component {
 						onClick={this.handleData}
 					/>
 
-					<h3>
-						{(format(new Date(this.state.displayYear, this.state.displayMonth), 'MMMM yyyy'))}
-					</h3>
+					<h3>{format(new Date(this.state.displayYear, this.state.displayMonth), 'MMMM yyyy')}</h3>
 
 					<button
 						className="forward-btn"
