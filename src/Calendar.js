@@ -10,6 +10,7 @@ class Calendar extends Component {
 		this.state = {
 			displayMonth: new Date().getMonth(),
 			displayYear: new Date().getFullYear(),
+			daysInMonth: [],
 			eventDates: []
 		};
 		this.handleData = this.handleData.bind(this);
@@ -97,6 +98,7 @@ class Calendar extends Component {
 		let days = [];
 		let month = state.displayMonth;
 		let year = state.displayYear;
+
 		for (let i = 1; i <= getDaysInMonth(new Date(state.displayYear, state.displayMonth)); i++) {
 			days.push(format(new Date(year, month, i), 'yyyy-MM-dd'));
 		}
@@ -108,27 +110,39 @@ class Calendar extends Component {
 
 	handleDays() {
 		let daysUI;
+		let codedArray = [];
 		let startDay = getDay(startOfMonth(new Date(this.state.displayYear, this.state.displayMonth)));
 		const styles = {
 			gridColumnStart: startDay
 		};
-
-		//filtered array to return styles
-
-		let testDaysUI;
-		testDaysUI = this.state.daysInMonth.map((el) => {
-			let y = this.state.eventDates.map((bo) => {
-				return bo;
-			});
-			console.log( el);
-			console.log(y[0]);
-			if (el === y[0]) {
-				return `this is el: ${el} and this is bo: ${y}`;
-			}
+		// this filters out any duplicates in the array
+		let filteredEventDates = this.state.eventDates.map((v, i, a) => {
+			let vSliced = v.slice(0, 11);
+			return vSliced;
 		});
-		console.log(testDaysUI);
+		filteredEventDates = [ ...new Set(filteredEventDates) ];
 
-		daysUI = this.state.daysInMonth.map((el, i) => {
+		console.log(filteredEventDates);
+
+		this.state.daysInMonth.forEach((element) => {
+			let count = 0;
+
+			filteredEventDates.forEach((eventElement) => {
+				count++;
+				let slicedDate = eventElement.slice(0, 10);
+				if (element === eventElement) {
+					codedArray.push('Busy');
+					count = 0;
+				} else if (eventElement.includes('T') && slicedDate === element) {
+					codedArray.push('FreeBusy');
+					count = 0;
+				} else if (element !== eventElement && count === filteredEventDates.length) {
+					codedArray.push('Free');
+				}
+			});
+		});
+		console.log(codedArray);
+		daysUI = codedArray.map((el, i) => {
 			if (i === 0) {
 				styles.gridColumnStart = startDay;
 				return (
@@ -136,6 +150,10 @@ class Calendar extends Component {
 						{i + 1}
 					</div>
 				);
+			} else if (el === 'FreeBusy') {
+				return <div className="purpleBlueDay">{i + 1}</div>;
+			} else if (el ===	 'Busy') {
+				return <div className="purpleDay">{i + 1}</div>;
 			} else {
 				return <div className="day">{i + 1}</div>;
 			}

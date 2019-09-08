@@ -1,5 +1,6 @@
-.day {
-	background: #00afc6;
+.day,
+.purpleDay,
+.purpleBlueDay {
 	border-radius: 50%;
 	margin: 3px;
 	color: white;
@@ -8,6 +9,32 @@
 	align-items: center;
 	font-size: 15px;
 	cursor: pointer;
+}
+.day {
+	background: #00afc6;
+}
+.purpleDay {
+	background: #8e388d;
+}
+.purpleBlueDay {
+	background: #00afc6;
+	position: relative;
+	z-index: -1;
+}
+.purpleBlueDay::after {
+	content: '';
+	position: absolute;
+	background: #8e388d;
+	z-index: -1;
+	top: 0;
+	right: 0;
+	width: 50%;
+	height: 100%;
+	border-bottom-right-radius: 100px;
+	border-top-right-radius: 100px;
+	border-left: 0;
+	transform: rotate(-135deg);
+	transform-origin: left center;
 }
 .month-selector {
 	display: flex;
