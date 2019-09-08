@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { getDay, getDaysInMonth, startOfMonth, format } from 'date-fns';
 import './Calendar.css';
 import { gapi } from 'gapi-script';
+import Spinner from './Spinner';
 
 class Calendar extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
+			isLoading: true,
 			displayMonth: new Date().getMonth(),
 			displayYear: new Date().getFullYear(),
 			daysInMonth: [],
@@ -49,6 +51,7 @@ class Calendar extends Component {
 							}
 						}
 						that.setState({
+							isLoading: false,
 							eventDates
 						});
 					},
@@ -141,7 +144,7 @@ class Calendar extends Component {
 				}
 			});
 		});
-		console.log(codedArray);
+
 		daysUI = codedArray.map((el, i) => {
 			if (i === 0) {
 				styles.gridColumnStart = startDay;
@@ -152,7 +155,7 @@ class Calendar extends Component {
 				);
 			} else if (el === 'FreeBusy') {
 				return <div className="purpleBlueDay">{i + 1}</div>;
-			} else if (el ===	 'Busy') {
+			} else if (el === 'Busy') {
 				return <div className="purpleDay">{i + 1}</div>;
 			} else {
 				return <div className="day">{i + 1}</div>;
@@ -187,9 +190,11 @@ class Calendar extends Component {
 						display: 'grid',
 						gridTemplateColumns: 'repeat(7, 40px)',
 						gridTemplateRows: 'repeat(6, 40px)',
-						fontFamily: 'sans-serif'
+						fontFamily: 'sans-serif',
+						position: 'relative'
 					}}
 				>
+					<Spinner loading={this.state.isLoading} />
 					{this.handleDays()}
 				</div>
 			</div>
