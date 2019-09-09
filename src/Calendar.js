@@ -111,8 +111,14 @@ class Calendar extends Component {
 		let daysUI;
 		let codedArray = [];
 		let startDay = getDay(startOfMonth(new Date(this.state.displayYear, this.state.displayMonth)));
-		const styles = {};
-		// this filters out any duplicates in the array
+
+		if (startDay === 0) {
+			startDay = 7;
+		}
+		console.log(startDay);
+
+		//Filters array to return single array
+
 		let filteredEventDates = this.state.eventDates
 			.map((v, i, a) => {
 				let vSliced = v.slice(0, 11);
@@ -123,12 +129,13 @@ class Calendar extends Component {
 					!element.includes('T') || (element.includes('T') && !arr.includes(element.slice(0, -1)))
 			);
 		filteredEventDates = [ ...new Set(filteredEventDates) ];
-		console.log(this.state.eventDates);
 
-		console.log(filteredEventDates);
+		// End Filtering
+
+		//Returns new array of busy, free, and freebusy
+
 		this.state.daysInMonth.forEach((element) => {
 			let count = 0;
-
 			filteredEventDates.forEach((eventElement) => {
 				count++;
 				let slicedDate = eventElement.slice(0, 10);
@@ -144,43 +151,51 @@ class Calendar extends Component {
 			});
 		});
 
-		daysUI = codedArray.map((el, i) => {
-			if (i === 0) {
-				styles.gridColumnStart = startDay;
-				return (
-					<div style={styles} className="day">
-						{i + 1}
-					</div>
-				);
-			} else if (el === 'FreeBusy') {
-				return (
-					<div className="purpleBlueDay">
-						{i + 1} <span class="tooltiptext">Полу&#8209;занят</span>
-					</div>
-				);
-			} else if (el === 'Busy') {
-				return (
-					<div className="purpleDay">
-						{i + 1}
-						<span class="tooltiptext">Занят</span>
-					</div>
-				);
-			} else {
-				return (
-					<div className="day">
-						{i + 1}
-						<span class="tooltiptext">Свободно</span>
-					</div>
-				);
-			}
-		});
+		//End new array return
 
-		return daysUI;
+		return daysUI = codedArray.map((el, i) => {
+			let params = {};
+			switch (el) {
+				case 'FreeBusy':
+					params = {
+						str: 'Полу&#8209;занят',
+						dayCode: 'purpleBlueDay',
+						start: startDay,
+						firstDay: i
+					};
+					break;
+
+				case 'Busy':
+					params = {
+						str: 'Занят',
+						dayCode: 'purpleDay',
+						start: startDay,
+						firstDay: i
+					};
+					break;
+
+				default:
+					params = {
+						str: 'Свободно',
+						dayCode: 'day',
+						start: startDay,
+						firstDay: i
+					};
+					break;
+			}
+			console.log(params);
+			return (
+				<div style={params.firstDay === 0 ? { gridColumnStart: startDay } : null} className={params.dayCode}>
+					{i + 1} <span className="tooltiptext">{params.str}</span>
+				</div>
+			);
+		});
 	}
 
 	render() {
 		return (
 			<div className="calendar">
+				<Spinner loading={this.state.isLoading} />
 				<div className="month-selector">
 					<button
 						className="reverse-btn"
@@ -197,7 +212,6 @@ class Calendar extends Component {
 					/>
 				</div>
 				<div className="daysBox">
-					<Spinner loading={this.state.isLoading} />
 					{this.handleDays()}
 				</div>
 			</div>
