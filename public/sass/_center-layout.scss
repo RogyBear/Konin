@@ -1,0 +1,49 @@
+.center-layout {
+	width: 838px;
+	height: 905px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate3d(-50%, -47%, 0);
+	overflow: hidden;
+	z-index: 2;
+	&__suit,
+	&__casual {
+		height: 100%;
+		background-repeat: no-repeat;
+		background-color: transparent;
+		background-size: cover;
+		background-position: center;
+		position: absolute;
+		overflow: hidden;
+		img {
+			height: 100%;
+			position: absolute;
+			z-index: 5;
+		}
+	}
+	&__suit {
+		width: 50%;
+		top: 0;
+		left: 0;
+		img {
+			left: 255px;
+		}
+	}
+	&__casual {
+		width: 50%;
+		top: 0;
+		right: 0;
+		z-index: 5;
+		img {
+			right: 188px;
+			top: 9px;
+		}
+		&__white-konin {
+			top: -34px !important;
+			right: 664px !important;
+			height: 24.3% !important;
+			width: 175px;
+		}
+	}
+}

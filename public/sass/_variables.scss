@@ -1,0 +1,129 @@
+html {
+	font-size: 62.5%;
+}
+.blue-name {
+	position: absolute;
+	top: 0;
+	left: 100px;
+}
+.purpleDots {
+	position: absolute;
+	bottom: 155px;
+	left: 293px;
+}
+
+.smallPinkDiamond {
+	position: absolute;
+	top: 5rem;
+	right: 10.5rem;
+}
+.purpleDownTriangle {
+	position: absolute;
+	top: 3rem;
+	right: 4rem;
+}
+.yellowLeftTriangle {
+	position: absolute;
+	top: 20rem;
+	right: 12rem;
+}
+.blueDotPurple {
+	position: absolute;
+	top: 10rem;
+	right: 27rem;
+}
+.smallPurpleTriangle {
+	position: absolute;
+	top: 7px;
+	left: -4rem;
+}
+
+.yellowArrowLeft,
+.yellowArrowRight {
+	position: absolute;
+	bottom: 2rem;
+	z-index: 2;
+	cursor: pointer;
+}
+.yellowArrowLeft {
+	left: 48.6%;
+	transform: translateX(-50%);
+}
+.yellowArrowRight {
+	left: 51.1%;
+	transform: rotateY(180deg);
+}
+.pinkRibbon {
+	z-index: 1;
+}
+.purpleBubble {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.pinkBall {
+	width: 1.2rem;
+	height: 1.2rem;
+	border-radius: 50%;
+	background: #e9487e;
+	opacity: 0;
+}
+
+.spiral {
+	position: absolute;
+	width: 416.2px;
+	height: 416.2px;
+	left: 49%;
+	top: 41.71px;
+	z-index: -1;
+	transform: translateX(-39%);
+}
+.purpleDiamond {
+	position: absolute;
+	left: 15.18%;
+	right: 83.83%;
+	top: 31.12%;
+	bottom: 67.13%;
+}
+.blueDot {
+	position: absolute;
+	left: 23.48%;
+	right: 75.78%;
+	top: 29.99%;
+	bottom: 68.69%;
+}
+
+.yellow-box {
+	position: absolute;
+	width: 527.69px;
+	height: 565px;
+	top: 56%;
+	left: 50%;
+	transform: translate(-50%, -47%);
+	border: 16px solid #fbe751;
+	box-sizing: border-box;
+	z-index: 1;
+}
+.small-purple-bubble {
+	position: absolute;
+	top: 80%;
+	right: 31.5%;
+}
+.half-blue-circle {
+	position: absolute;
+	top: 81.5%;
+	right: 29.5%;
+}
+.small-blue-square {
+	position: absolute;
+	top: 95%;
+	right: 31.2%;
+}
+.yellowTriangle {
+	position: absolute;
+	left: -10px;
+	right: 78.61%;
+	top: 37.5%;
+	bottom: 24.37%;
+}

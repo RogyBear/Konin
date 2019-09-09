@@ -1,0 +1,145 @@
+.purple-box {
+	position: absolute;
+	right: 0px;
+	width: 50%;
+	overflow: hidden;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	&__info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 584px;
+		position: absolute;
+		right: 200px;
+		font-family: 'Circe', 'sans-serif';
+
+		&__about {
+			display: flex;
+			position: relative;
+			font-size: 2rem;
+			line-height: 2.8rem;
+			letter-spacing: -0.01em;
+			align-self: flex-start;
+			margin-left: 4rem;
+			margin-top: 6rem;
+			z-index: 2;
+			letter-spacing: 1px;
+			.smallPurpleTriangle {
+				align-self: flex-start;
+			}
+			&__list {
+				display: flex;
+				list-style: none;
+				cursor: pointer;
+
+				&__item {
+					margin-left: 3rem;
+					font-family: 'Circe-bold', 'sans-serif';
+					position: relative;
+					text-shadow: 1px 1px 0px #00afc6;
+
+					&::before {
+						content: '';
+						height: 1rem;
+						width: 6rem;
+						background-color: #fbe751;
+						display: block;
+						position: absolute;
+						top: 19px;
+						left: 50%;
+						transform: translateX(-50%);
+						z-index: -2;
+						opacity: 0;
+						transition: opacity .2s;
+					}
+					&:hover::before {
+						opacity: 1;
+						transition: opacity .2s;
+					}
+				}
+			}
+		}
+		&__box2 {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			width: 100%;
+			margin-top: 10rem;
+			position: relative;
+		}
+		&__social-media {
+			display: flex;
+			margin-right: 10rem;
+
+			&__icon {
+				list-style: none;
+				svg {
+					cursor: pointer;
+					&:hover path {
+						fill: #fbe751;
+					}
+				}
+			}
+		}
+		&__title {
+			margin-top: 1rem;
+			align-self: flex-start;
+			position: relative;
+			z-index: 1;
+			font-family: 'Kontanter', 'sans-serif';
+			text-shadow: 1px 1px 0px #00afc6;
+			font-size: 4rem;
+			line-height: 4.7rem;
+		}
+		&__text {
+			font-family: 'Circe', 'sans-serif';
+			font-size: 1.9rem;
+			line-height: 2.8rem;
+			letter-spacing: -0.01em;
+			position: relative;
+			z-index: 1;
+			margin-top: 3.5rem;
+			width: 48rem;
+			align-self: flex-start;
+			p {
+				position: relative;
+				z-index: 3;
+			}
+			.purpleRectangle {
+				position: absolute;
+				width: 40.36px;
+				height: 242.99px;
+				left: 17%;
+				top: 55%;
+				transform: translate(-55%, -57%);
+				z-index: 0;
+			}
+		}
+
+		&__vedushy {
+			align-self: flex-end;
+			margin-right: 9rem;
+			margin-top: 12rem;
+			font-family: 'Kontanter', 'sans-serif';
+			font-size: 25px;
+			line-height: 30px;
+			color: #ffffff;
+			text-shadow: 1px 1px 0px #00afc6;
+			position: relative;
+			&__blue-box {
+				content: '';
+				position: absolute;
+				display: block;
+				width: 152.6px;
+				height: 15.15px;
+				top: 1.9rem;
+				left: -6px;
+				background: #2a6a93;
+				z-index: -1;
+				opacity: 0;
+			}
+		}
+	}
+}

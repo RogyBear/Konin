@@ -1,0 +1,92 @@
+.white-box {
+	display: flex;
+	justify-content: center;
+	position: relative;
+	width: 50%;
+	overflow: hidden;
+	color: #fff;
+	display: flex;
+
+	justify-content: center;
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-left: 13rem;
+		position: absolute;
+		left: 153px;
+
+		&__name {
+			align-self: flex-start;
+			margin-top: 4rem;
+			margin-bottom: 14rem;
+		}
+		&__whiteBox {
+			position: absolute;
+			width: 43.92px;
+			height: 50.1px;
+			left: 80%;
+			top: 482px;
+			background: #ffffff;
+			z-index: 1;
+			transform: translateX(-46%);
+		}
+		&__title {
+			align-self: flex-end;
+			position: relative;
+			z-index: 1;
+			margin-right: 8rem;
+			margin-bottom: 3rem;
+			font-family: 'Trajan Pro 3-bold', 'sans-serif';
+			font-weight: bold;
+			font-size: 39px;
+			line-height: 47px;
+			text-align: right;
+			color: #e9487e;
+			text-shadow: 1px 1px 0px #00afc6;
+		}
+		&__text {
+			font-family: 'Circe', 'sans-serif';
+			position: relative;
+			z-index: 2;
+			height: 22rem;
+			width: 53rem;
+			z-index: 1;
+			font-size: 2rem;
+			line-height: 2.8rem;
+			letter-spacing: -0.01em;
+			span {
+				font-weight: bold;
+			}
+			color: #542660;
+		}
+		&__clocks {
+			align-self: flex-start;
+			margin-top: 1rem;
+		}
+
+		&__conferanceyo {
+			align-self: flex-start;
+			margin-top: 6rem;
+			font-family: 'Trajan Pro 3-bold';
+			font-size: 25px;
+			line-height: 30px;
+			color: #e9487e;
+			text-shadow: 1px 1px 0px #00afc6;
+			position: relative;
+			&__blue-box {
+				content: '';
+				position: absolute;
+				display: block;
+				width: 222.6px;
+				height: 15.15px;
+				top: 1.7rem;
+				left: -6px;
+				background: #fbe751;
+				z-index: -2;
+				opacity: 0;
+			}
+		}
+	}
+}

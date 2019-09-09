@@ -1,0 +1,44 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.container {
+	position: relative;
+
+	.wrapper {
+		display: flex;
+		position: absolute;
+		width: 1920px;
+		height: 969px;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.white-box {
+		width: 50%;
+	}
+	.purple-box {
+		height: 100%;
+		width: 50%;
+	}
+	.color-change-purple {
+		height: 100%;
+		background: linear-gradient(180deg, #371f4a 0%, #5b2866 100%);
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 50%;
+		z-index: -1;
+	}
+	.color-change-white {
+		height: 100%;
+		background: #fff;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 50%;
+		z-index: -2;
+	}
+}
