@@ -18,7 +18,8 @@ class Spinner extends React.Component {
 			loading: true
 		};
 		console.log(this.state.loading);
-	}
+    }
+    
 	static getDerivedStateFromProps(props, state) {
 		return { loading: props.loading };
 	}
@@ -26,7 +27,7 @@ class Spinner extends React.Component {
 	render() {
 		return (
 			<div className="sweet-loading">
-				<ClipLoader css={override} sizeUnit={'px'} size={75} color={'#00afc6'} loading={this.state.loading} />
+				<ClipLoader css={override} sizeUnit={'px'} size={75} color={'#8e388d'} loading={this.state.loading} />
 			</div>
 		);
 	}

@@ -17,8 +17,6 @@ class Calendar extends Component {
 		};
 		this.handleData = this.handleData.bind(this);
 		this.handleDays = this.handleDays.bind(this);
-
-		// this.handleDate = this.handleDate.bind(this);
 	}
 
 	// Google Calendar API
@@ -64,8 +62,6 @@ class Calendar extends Component {
 	}
 
 	//End Google Calendar API
-
-	// Correctly update the days in the month
 
 	handleData(event) {
 		const { value } = event.target;
@@ -115,18 +111,21 @@ class Calendar extends Component {
 		let daysUI;
 		let codedArray = [];
 		let startDay = getDay(startOfMonth(new Date(this.state.displayYear, this.state.displayMonth)));
-		const styles = {
-			gridColumnStart: startDay
-		};
+		const styles = {};
 		// this filters out any duplicates in the array
-		let filteredEventDates = this.state.eventDates.map((v, i, a) => {
-			let vSliced = v.slice(0, 11);
-			return vSliced;
-		});
+		let filteredEventDates = this.state.eventDates
+			.map((v, i, a) => {
+				let vSliced = v.slice(0, 11);
+				return vSliced;
+			})
+			.filter(
+				(element, index, arr) =>
+					!element.includes('T') || (element.includes('T') && !arr.includes(element.slice(0, -1)))
+			);
 		filteredEventDates = [ ...new Set(filteredEventDates) ];
+		console.log(this.state.eventDates);
 
 		console.log(filteredEventDates);
-
 		this.state.daysInMonth.forEach((element) => {
 			let count = 0;
 
@@ -154,11 +153,25 @@ class Calendar extends Component {
 					</div>
 				);
 			} else if (el === 'FreeBusy') {
-				return <div className="purpleBlueDay">{i + 1}</div>;
+				return (
+					<div className="purpleBlueDay">
+						{i + 1} <span class="tooltiptext">Полу&#8209;занят</span>
+					</div>
+				);
 			} else if (el === 'Busy') {
-				return <div className="purpleDay">{i + 1}</div>;
+				return (
+					<div className="purpleDay">
+						{i + 1}
+						<span class="tooltiptext">Занят</span>
+					</div>
+				);
 			} else {
-				return <div className="day">{i + 1}</div>;
+				return (
+					<div className="day">
+						{i + 1}
+						<span class="tooltiptext">Свободно</span>
+					</div>
+				);
 			}
 		});
 
@@ -175,9 +188,7 @@ class Calendar extends Component {
 						value={this.state.displayMonth === 0 ? 'minusOneYear' : 'dec'}
 						onClick={this.handleData}
 					/>
-
 					<h3>{format(new Date(this.state.displayYear, this.state.displayMonth), 'MMMM yyyy')}</h3>
-
 					<button
 						className="forward-btn"
 						name="displayMonth"
@@ -185,15 +196,7 @@ class Calendar extends Component {
 						onClick={this.handleData}
 					/>
 				</div>
-				<div
-					style={{
-						display: 'grid',
-						gridTemplateColumns: 'repeat(7, 40px)',
-						gridTemplateRows: 'repeat(6, 40px)',
-						fontFamily: 'sans-serif',
-						position: 'relative'
-					}}
-				>
+				<div className="daysBox">
 					<Spinner loading={this.state.isLoading} />
 					{this.handleDays()}
 				</div>
