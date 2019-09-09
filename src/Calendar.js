@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { getDay, getDaysInMonth, startOfMonth, format } from 'date-fns';
+import { ru } from 'date-fns/locale';
 import './Calendar.css';
 import { gapi } from 'gapi-script';
 import Spinner from './Spinner';
@@ -111,7 +112,7 @@ class Calendar extends Component {
 		let daysUI;
 		let codedArray = [];
 		let startDay = getDay(startOfMonth(new Date(this.state.displayYear, this.state.displayMonth)));
-
+		
 		if (startDay === 0) {
 			startDay = 7;
 		}
@@ -153,7 +154,7 @@ class Calendar extends Component {
 
 		//End new array return
 
-		return daysUI = codedArray.map((el, i) => {
+		return codedArray.map((el, i) => {
 			let params = {};
 			switch (el) {
 				case 'FreeBusy':
@@ -183,7 +184,7 @@ class Calendar extends Component {
 					};
 					break;
 			}
-			console.log(params);
+
 			return (
 				<div style={params.firstDay === 0 ? { gridColumnStart: startDay } : null} className={params.dayCode}>
 					{i + 1} <span className="tooltiptext">{params.str}</span>
@@ -203,7 +204,14 @@ class Calendar extends Component {
 						value={this.state.displayMonth === 0 ? 'minusOneYear' : 'dec'}
 						onClick={this.handleData}
 					/>
-					<h3>{format(new Date(this.state.displayYear, this.state.displayMonth), 'MMMM yyyy')}</h3>
+					<h3>
+						{format(new Date(this.state.displayYear, this.state.displayMonth), 'MMMM yyyy', { locale: ru })
+							.charAt(0)
+							.toUpperCase() +
+							format(new Date(this.state.displayYear, this.state.displayMonth), 'MMMM yyyy', {
+								locale: ru
+							}).slice(1)}
+					</h3>
 					<button
 						className="forward-btn"
 						name="displayMonth"
@@ -211,9 +219,7 @@ class Calendar extends Component {
 						onClick={this.handleData}
 					/>
 				</div>
-				<div className="daysBox">
-					{this.handleDays()}
-				</div>
+				<div className="daysBox">{this.handleDays()}</div>
 			</div>
 		);
 	}
