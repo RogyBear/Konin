@@ -9,7 +9,8 @@ html {
 .purpleDots {
 	position: absolute;
 	bottom: 155px;
-	left: 293px;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .smallPinkDiamond {

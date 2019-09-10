@@ -112,7 +112,7 @@ class Calendar extends Component {
 		let daysUI;
 		let codedArray = [];
 		let startDay = getDay(startOfMonth(new Date(this.state.displayYear, this.state.displayMonth)));
-		
+
 		if (startDay === 0) {
 			startDay = 7;
 		}
@@ -159,7 +159,7 @@ class Calendar extends Component {
 			switch (el) {
 				case 'FreeBusy':
 					params = {
-						str: 'Полу&#8209;занят',
+						str: 'Полу-занят',
 						dayCode: 'purpleBlueDay',
 						start: startDay,
 						firstDay: i

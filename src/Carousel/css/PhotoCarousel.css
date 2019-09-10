@@ -2,3 +2,64 @@
 	width: 500px;
 	height: 500px;
 }
+
+.pop-up {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.438);
+	z-index: 100;
+	cursor: default;
+}
+
+.photo-display,
+.pop-up-border {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.pop-up-border {
+	width: 650px;
+	height: 650px;
+	background: linear-gradient(270deg, #bf27e6 0%, #7a378a 60%);
+	border-radius: 20px;
+	display: flex;
+	justify-content: flex-end;
+}
+.x-btn {
+	height: 50px;
+	width: 50px;
+	margin-top: 20px;
+	margin-right: 20px;
+	cursor: pointer;
+	position: relative;
+	transition: .2s opacity;
+	opacity: 1;
+}
+.x-btn:hover {
+	opacity: .6;
+	transition: .2s opacity;
+}
+.x-btn:before,
+.x-btn:after {
+	content: '';
+	position: absolute;
+	top: 40%;
+	left: 10%;
+	background: rgb(255, 255, 255);
+	width: 100%;
+	height: 7px;
+	border-radius: 10px;
+}
+.x-btn:before {
+	transform: rotate(45deg);
+	transform-origin: center center;
+}
+.x-btn:after {
+	transform: rotate(-45deg);
+	transform-origin: center center;
+}

@@ -48,19 +48,20 @@
 }
 .month-selector {
 	display: flex;
-	height: 50px;
+	/* height: 50px; */
 	justify-content: space-around;
 	align-items: center;
-	width: 250px;
+	width: 170px;
 	font-family: 'Circe', 'sans-serif';
 	font-size: 15px;
-	line-height: 22px;
+
 	letter-spacing: -0.01em;
 	transform: rotate(-90deg);
-	align-self: center;
-	margin-bottom: 30px;
-	margin-right: -100px;
+
 	color: #000;
+	top: 80px;
+	left: -80px;
+	position: absolute;
 }
 
 .calendar {
@@ -96,7 +97,9 @@
 	grid-template-columns: repeat(7, 35px);
 	grid-template-rows: repeat(6, 35px);
 	font-family: sans-serif;
-	position: relative;
+	position: absolute;
+	top: -10px;
+	left: 25px;
 }
 
 .tooltiptext {

@@ -6,9 +6,8 @@ import ClipLoader from 'react-spinners/RingLoader';
 // Can be a string as well. Need to ensure each key-value pair ends with ;
 const override = css`
 	position: absolute;
-	top: 9%;
-	left: 19%;
-	
+	top: 50px;
+	left: 90px;
 `;
 
 class Spinner extends React.Component {
@@ -17,8 +16,8 @@ class Spinner extends React.Component {
 		this.state = {
 			loading: true
 		};
-    }
-    
+	}
+
 	static getDerivedStateFromProps(props, state) {
 		return { loading: props.loading };
 	}

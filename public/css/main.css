@@ -34,10 +34,10 @@
       right: 188px;
       top: 9px; }
     .center-layout__casual__white-konin {
-      top: -34px !important;
-      right: 664px !important;
+      top: -37px !important;
+      right: 649px !important;
       height: 24.3% !important;
-      width: 175px; }
+      width: 190px; }
 
 * {
   margin: 0;
@@ -87,7 +87,8 @@ html {
 .purpleDots {
   position: absolute;
   bottom: 155px;
-  left: 293px; }
+  left: 50%;
+  transform: translateX(-50%); }
 
 .smallPinkDiamond {
   position: absolute;
@@ -341,13 +342,13 @@ html {
     .white-box__info__name {
       align-self: flex-start;
       margin-top: 4rem;
-      margin-bottom: 14rem; }
+      margin-bottom: 10rem; }
     .white-box__info__whiteBox {
       position: absolute;
       width: 43.92px;
       height: 50.1px;
       left: 80%;
-      top: 482px;
+      top: 440px;
       background: #ffffff;
       z-index: 1;
       transform: translateX(-46%); }
@@ -382,7 +383,7 @@ html {
       margin-top: 1rem; }
     .white-box__info__conferanceyo {
       align-self: flex-start;
-      margin-top: 6rem;
+      margin-top: 8.7em;
       font-family: 'Trajan Pro 3-bold';
       font-size: 25px;
       line-height: 30px;
