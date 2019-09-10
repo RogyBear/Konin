@@ -67,12 +67,12 @@ class Carousel extends Component {
 		}
 		return (
 			<div className="Carousel">
-				<div name="displayPhotoCarousel" value="photo" onClick={this.displayCarousel}>
+				<button className="carousel-btn" name="displayPhotoCarousel" value="photo" onClick={this.displayCarousel}>
 					Фото
-				</div>
-				<div name="displayVideoCarousel" value="video" onClick={this.displayCarousel}>
+				</button>
+				<button className="carousel-btn" name="displayVideoCarousel" value="video" onClick={this.displayCarousel}>
 					Видео
-				</div>
+				</button>
 				{carousel}
 			</div>
 		);

@@ -63,3 +63,41 @@
 	transform: rotate(-45deg);
 	transform-origin: center center;
 }
+
+.carousel-btn {
+	font-family: 'Circe-bold', 'sans-serif';
+	font-size: 19px;
+	line-height: 28px;
+	letter-spacing: 1px;
+	background: transparent;
+	color: white;
+	border: none;
+	margin-left: 30px;
+	cursor: pointer;
+	text-shadow: 1px 1px 0px #00afc6;
+	position: relative;
+}
+
+.carousel-btn::before {
+	content: '';
+	height: 1rem;
+	width: 6rem;
+	background-color: #fbe751;
+	display: block;
+	position: absolute;
+	top: 19px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: -2;
+	opacity: 0;
+	transition: opacity .2s;
+}
+
+.carousel-btn:hover::before {
+	opacity: 1;
+	transition: opacity .2s;
+}
+
+.carousel-btn:focus {
+	outline: none;
+}

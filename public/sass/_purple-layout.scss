@@ -34,31 +34,7 @@
 				list-style: none;
 				cursor: pointer;
 
-				&__item {
-					margin-left: 3rem;
-					font-family: 'Circe-bold', 'sans-serif';
-					position: relative;
-					text-shadow: 1px 1px 0px #00afc6;
-
-					&::before {
-						content: '';
-						height: 1rem;
-						width: 6rem;
-						background-color: #fbe751;
-						display: block;
-						position: absolute;
-						top: 19px;
-						left: 50%;
-						transform: translateX(-50%);
-						z-index: -2;
-						opacity: 0;
-						transition: opacity .2s;
-					}
-					&:hover::before {
-						opacity: 1;
-						transition: opacity .2s;
-					}
-				}
+				
 			}
 		}
 		&__box2 {
