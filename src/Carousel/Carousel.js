@@ -37,6 +37,7 @@ class Carousel extends Component {
 			]
 		};
 		this.displayCarousel = this.displayCarousel.bind(this);
+		this.destroy = this.destroy.bind(this);
 	}
 
 	displayCarousel(event) {
@@ -46,13 +47,20 @@ class Carousel extends Component {
 		});
 	}
 
+	destroy() {
+		this.setState({
+			displayVideoCarousel: false,
+			displayPhotoCarousel: false
+		});
+	}
+
 	render() {
 		let carousel = null;
 		if (this.state.displayPhotoCarousel) {
 			carousel = (
 				<div className="pop-up">
 					{this.state.photoData.map((el) => {
-						return <PhotoCarousel key={el.id} content={el.data} />;
+						return <PhotoCarousel key={el.id} content={el.data} destroy={this.destroy} />;
 					})}
 				</div>
 			);
@@ -60,17 +68,29 @@ class Carousel extends Component {
 			carousel = (
 				<div className="pop-up">
 					{this.state.videoData.map((el) => {
-						return <PhotoCarousel key={el.id} content={el.data} />;
+						return <PhotoCarousel key={el.id} content={el.data} destroy={this.destroy} />;
 					})}
 				</div>
 			);
+		} else if (!this.state.displayVideoCarousel || !this.state.displayPhotoCarousel) {
+			carousel = null;
 		}
 		return (
 			<div className="Carousel">
-				<button className="carousel-btn" name="displayPhotoCarousel" value="photo" onClick={this.displayCarousel}>
+				<button
+					className="carousel-btn"
+					name="displayPhotoCarousel"
+					value="photo"
+					onClick={this.displayCarousel}
+				>
 					Фото
 				</button>
-				<button className="carousel-btn" name="displayVideoCarousel" value="video" onClick={this.displayCarousel}>
+				<button
+					className="carousel-btn"
+					name="displayVideoCarousel"
+					value="video"
+					onClick={this.displayCarousel}
+				>
 					Видео
 				</button>
 				{carousel}

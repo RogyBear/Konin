@@ -14,7 +14,9 @@
 		position: absolute;
 		right: 200px;
 		font-family: 'Circe', 'sans-serif';
-
+		@include mQ(1480px) {
+			right: -2.6rem;
+		}
 		&__about {
 			display: flex;
 			position: relative;
@@ -26,15 +28,16 @@
 			margin-top: 6rem;
 			z-index: 2;
 			letter-spacing: 1px;
+
 			.smallPurpleTriangle {
 				align-self: flex-start;
 			}
 			&__list {
 				display: flex;
 				list-style: none;
-				cursor: pointer;
-
-				
+			}
+			@include mQ(1480px) {
+				visibility: hidden;
 			}
 		}
 		&__box2 {
@@ -48,7 +51,9 @@
 		&__social-media {
 			display: flex;
 			margin-right: 10rem;
-
+			@include mQ(1480px) {
+				visibility: hidden;
+			}
 			&__icon {
 				list-style: none;
 				svg {
@@ -68,6 +73,9 @@
 			text-shadow: 1px 1px 0px #00afc6;
 			font-size: 4rem;
 			line-height: 4.7rem;
+			@include mQ(1480px) {
+				font-size: 3.8rem;
+			}
 		}
 		&__text {
 			font-family: 'Circe', 'sans-serif';
@@ -79,6 +87,9 @@
 			margin-top: 3.5rem;
 			width: 48rem;
 			align-self: flex-start;
+			@include mQ(1480px) {
+				width: 42rem;
+			}
 			p {
 				position: relative;
 				z-index: 3;
@@ -104,6 +115,11 @@
 			color: #ffffff;
 			text-shadow: 1px 1px 0px #00afc6;
 			position: relative;
+			@include mQ(1480px) {
+				margin-top: 6rem;
+				margin-right: 40%;
+				transform: translateX(-50%);
+			}
 			&__blue-box {
 				content: '';
 				position: absolute;

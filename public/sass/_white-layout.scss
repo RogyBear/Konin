@@ -6,7 +6,6 @@
 	overflow: hidden;
 	color: #fff;
 	display: flex;
-
 	justify-content: center;
 
 	&__info {
@@ -16,21 +15,31 @@
 		margin-left: 13rem;
 		position: absolute;
 		left: 153px;
+		@include mQ(1480px) {
+			margin-left: -9rem;
+		}
 
 		&__name {
 			align-self: flex-start;
 			margin-top: 4rem;
 			margin-bottom: 10rem;
+			@include mQ(1480px) {
+				margin-left: 6rem;
+			}
 		}
 		&__whiteBox {
 			position: absolute;
 			width: 43.92px;
-			height: 50.1px;
+			height: 50px;
 			left: 80%;
 			top: 440px;
 			background: #ffffff;
 			z-index: 1;
 			transform: translateX(-46%);
+			@include mQ(1480px) {
+				height: 125px;
+				width: 190px;
+			}
 		}
 		&__title {
 			align-self: flex-end;
@@ -45,6 +54,9 @@
 			text-align: right;
 			color: #e9487e;
 			text-shadow: 1px 1px 0px #00afc6;
+			@include mQ(1480px) {
+				margin-right: 16rem;
+			}
 		}
 		&__text {
 			font-family: 'Circe', 'sans-serif';
@@ -56,14 +68,18 @@
 			font-size: 2rem;
 			line-height: 2.8rem;
 			letter-spacing: -0.01em;
+			@include mQ(1480px) {
+				margin-left: 8rem;
+			}
 			span {
 				font-weight: bold;
 			}
 			color: #542660;
 		}
-		&__clocks {
-			align-self: flex-start;
-			margin-top: 1rem;
+		#root {
+			@include mQ(1480px) {
+				margin-left: 8.5rem;
+			}
 		}
 
 		&__conferanceyo {
@@ -75,6 +91,10 @@
 			color: #e9487e;
 			text-shadow: 1px 1px 0px #00afc6;
 			position: relative;
+			@include mQ(1480px) {
+				margin-left: 50%;
+				transform: translateX(-50%);
+			}
 			&__blue-box {
 				content: '';
 				position: absolute;

@@ -11,22 +11,34 @@ html {
 	bottom: 155px;
 	left: 50%;
 	transform: translateX(-50%);
+	@include mQ(1480px) {
+		display: none;
+	}
 }
 
 .smallPinkDiamond {
 	position: absolute;
 	top: 5rem;
 	right: 10.5rem;
+	@include mQ(1480px) {
+		right: 22.5rem;
+	}
 }
 .purpleDownTriangle {
 	position: absolute;
 	top: 3rem;
 	right: 4rem;
+	@include mQ(1480px) {
+		right: 16rem;
+	}
 }
 .yellowLeftTriangle {
 	position: absolute;
 	top: 20rem;
 	right: 12rem;
+	@include mQ(1480px) {
+		right: 15rem;
+	}
 }
 .blueDotPurple {
 	position: absolute;
@@ -86,6 +98,9 @@ html {
 	right: 83.83%;
 	top: 31.12%;
 	bottom: 67.13%;
+	@include mQ(1480px) {
+		left: 10%;
+	}
 }
 .blueDot {
 	position: absolute;
@@ -93,13 +108,16 @@ html {
 	right: 75.78%;
 	top: 29.99%;
 	bottom: 68.69%;
+	@include mQ(1480px) {
+		top: 24%;
+	}
 }
 
 .yellow-box {
 	position: absolute;
 	width: 527.69px;
 	height: 565px;
-	top: 56%;
+	top: 540px;
 	left: 50%;
 	transform: translate(-50%, -47%);
 	border: 16px solid #fbe751;
@@ -110,16 +128,25 @@ html {
 	position: absolute;
 	top: 80%;
 	right: 31.5%;
+	@include mQ(1480px) {
+		right: 11.5%;
+	}
 }
 .half-blue-circle {
 	position: absolute;
 	top: 81.5%;
 	right: 29.5%;
+	@include mQ(1480px) {
+		right: 9.5%;
+	}
 }
 .small-blue-square {
 	position: absolute;
 	top: 95%;
 	right: 31.2%;
+	@include mQ(1480px) {
+		right: 11.2%;
+	}
 }
 .yellowTriangle {
 	position: absolute;

@@ -3,7 +3,7 @@
   height: 905px;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 520px;
   transform: translate3d(-50%, -47%, 0);
   overflow: hidden;
   z-index: 2; }
@@ -49,11 +49,14 @@
   .container .wrapper {
     display: flex;
     position: absolute;
-    width: 1920px;
-    height: 969px;
+    width: 100vw;
+    height: 100vh;
     top: 0;
     left: 50%;
     transform: translateX(-50%); }
+    @media screen and (max-width: 1480px) {
+      .container .wrapper {
+        width: 1480px; } }
   .container .white-box {
     width: 50%; }
   .container .purple-box {
@@ -89,21 +92,33 @@ html {
   bottom: 155px;
   left: 50%;
   transform: translateX(-50%); }
+  @media screen and (max-width: 1480px) {
+    .purpleDots {
+      display: none; } }
 
 .smallPinkDiamond {
   position: absolute;
   top: 5rem;
   right: 10.5rem; }
+  @media screen and (max-width: 1480px) {
+    .smallPinkDiamond {
+      right: 22.5rem; } }
 
 .purpleDownTriangle {
   position: absolute;
   top: 3rem;
   right: 4rem; }
+  @media screen and (max-width: 1480px) {
+    .purpleDownTriangle {
+      right: 16rem; } }
 
 .yellowLeftTriangle {
   position: absolute;
   top: 20rem;
   right: 12rem; }
+  @media screen and (max-width: 1480px) {
+    .yellowLeftTriangle {
+      right: 15rem; } }
 
 .blueDotPurple {
   position: absolute;
@@ -160,6 +175,9 @@ html {
   right: 83.83%;
   top: 31.12%;
   bottom: 67.13%; }
+  @media screen and (max-width: 1480px) {
+    .purpleDiamond {
+      left: 10%; } }
 
 .blueDot {
   position: absolute;
@@ -167,12 +185,15 @@ html {
   right: 75.78%;
   top: 29.99%;
   bottom: 68.69%; }
+  @media screen and (max-width: 1480px) {
+    .blueDot {
+      top: 24%; } }
 
 .yellow-box {
   position: absolute;
   width: 527.69px;
   height: 565px;
-  top: 56%;
+  top: 540px;
   left: 50%;
   transform: translate(-50%, -47%);
   border: 16px solid #fbe751;
@@ -183,16 +204,25 @@ html {
   position: absolute;
   top: 80%;
   right: 31.5%; }
+  @media screen and (max-width: 1480px) {
+    .small-purple-bubble {
+      right: 11.5%; } }
 
 .half-blue-circle {
   position: absolute;
   top: 81.5%;
   right: 29.5%; }
+  @media screen and (max-width: 1480px) {
+    .half-blue-circle {
+      right: 9.5%; } }
 
 .small-blue-square {
   position: absolute;
   top: 95%;
   right: 31.2%; }
+  @media screen and (max-width: 1480px) {
+    .small-blue-square {
+      right: 11.2%; } }
 
 .yellowTriangle {
   position: absolute;
@@ -217,6 +247,9 @@ html {
     position: absolute;
     right: 200px;
     font-family: 'Circe', 'sans-serif'; }
+    @media screen and (max-width: 1480px) {
+      .purple-box__info {
+        right: -2.6rem; } }
     .purple-box__info__about {
       display: flex;
       position: relative;
@@ -232,8 +265,10 @@ html {
         align-self: flex-start; }
       .purple-box__info__about__list {
         display: flex;
-        list-style: none;
-        cursor: pointer; }
+        list-style: none; }
+      @media screen and (max-width: 1480px) {
+        .purple-box__info__about {
+          visibility: hidden; } }
     .purple-box__info__box2 {
       display: flex;
       justify-content: space-between;
@@ -244,6 +279,9 @@ html {
     .purple-box__info__social-media {
       display: flex;
       margin-right: 10rem; }
+      @media screen and (max-width: 1480px) {
+        .purple-box__info__social-media {
+          visibility: hidden; } }
       .purple-box__info__social-media__icon {
         list-style: none; }
         .purple-box__info__social-media__icon svg {
@@ -259,6 +297,9 @@ html {
       text-shadow: 1px 1px 0px #00afc6;
       font-size: 4rem;
       line-height: 4.7rem; }
+      @media screen and (max-width: 1480px) {
+        .purple-box__info__title {
+          font-size: 3.8rem; } }
     .purple-box__info__text {
       font-family: 'Circe', 'sans-serif';
       font-size: 1.9rem;
@@ -269,6 +310,9 @@ html {
       margin-top: 3.5rem;
       width: 48rem;
       align-self: flex-start; }
+      @media screen and (max-width: 1480px) {
+        .purple-box__info__text {
+          width: 42rem; } }
       .purple-box__info__text p {
         position: relative;
         z-index: 3; }
@@ -290,6 +334,11 @@ html {
       color: #ffffff;
       text-shadow: 1px 1px 0px #00afc6;
       position: relative; }
+      @media screen and (max-width: 1480px) {
+        .purple-box__info__vedushy {
+          margin-top: 6rem;
+          margin-right: 40%;
+          transform: translateX(-50%); } }
       .purple-box__info__vedushy__blue-box {
         content: '';
         position: absolute;
@@ -318,19 +367,29 @@ html {
     margin-left: 13rem;
     position: absolute;
     left: 153px; }
+    @media screen and (max-width: 1480px) {
+      .white-box__info {
+        margin-left: -9rem; } }
     .white-box__info__name {
       align-self: flex-start;
       margin-top: 4rem;
       margin-bottom: 10rem; }
+      @media screen and (max-width: 1480px) {
+        .white-box__info__name {
+          margin-left: 6rem; } }
     .white-box__info__whiteBox {
       position: absolute;
       width: 43.92px;
-      height: 50.1px;
+      height: 50px;
       left: 80%;
       top: 440px;
       background: #ffffff;
       z-index: 1;
       transform: translateX(-46%); }
+      @media screen and (max-width: 1480px) {
+        .white-box__info__whiteBox {
+          height: 125px;
+          width: 190px; } }
     .white-box__info__title {
       align-self: flex-end;
       position: relative;
@@ -344,6 +403,9 @@ html {
       text-align: right;
       color: #e9487e;
       text-shadow: 1px 1px 0px #00afc6; }
+      @media screen and (max-width: 1480px) {
+        .white-box__info__title {
+          margin-right: 16rem; } }
     .white-box__info__text {
       font-family: 'Circe', 'sans-serif';
       position: relative;
@@ -355,11 +417,14 @@ html {
       line-height: 2.8rem;
       letter-spacing: -0.01em;
       color: #542660; }
+      @media screen and (max-width: 1480px) {
+        .white-box__info__text {
+          margin-left: 8rem; } }
       .white-box__info__text span {
         font-weight: bold; }
-    .white-box__info__clocks {
-      align-self: flex-start;
-      margin-top: 1rem; }
+    @media screen and (max-width: 1480px) {
+      .white-box__info #root {
+        margin-left: 8.5rem; } }
     .white-box__info__conferanceyo {
       align-self: flex-start;
       margin-top: 8.7em;
@@ -369,6 +434,10 @@ html {
       color: #e9487e;
       text-shadow: 1px 1px 0px #00afc6;
       position: relative; }
+      @media screen and (max-width: 1480px) {
+        .white-box__info__conferanceyo {
+          margin-left: 50%;
+          transform: translateX(-50%); } }
       .white-box__info__conferanceyo__blue-box {
         content: '';
         position: absolute;

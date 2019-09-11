@@ -116,7 +116,6 @@ class Calendar extends Component {
 		if (startDay === 0) {
 			startDay = 7;
 		}
-		console.log(startDay);
 
 		//Filters array to return single array
 

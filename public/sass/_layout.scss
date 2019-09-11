@@ -9,11 +9,14 @@
 	.wrapper {
 		display: flex;
 		position: absolute;
-		width: 1920px;
-		height: 969px;
+		width: 100vw;
+		height: 100vh;
 		top: 0;
 		left: 50%;
 		transform: translateX(-50%);
+		@include mQ(1480px) {
+			width: 1480px;
+		}
 	}
 
 	.white-box {

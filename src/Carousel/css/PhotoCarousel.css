@@ -1,6 +1,5 @@
 .photoSize {
-	width: 500px;
-	height: 500px;
+	height: 700px;
 }
 
 .pop-up {
@@ -22,23 +21,19 @@
 	transform: translate(-50%, -50%);
 }
 
-.pop-up-border {
-	width: 650px;
-	height: 650px;
-	background: linear-gradient(270deg, #bf27e6 0%, #7a378a 60%);
-	border-radius: 20px;
-	display: flex;
-	justify-content: flex-end;
-}
 .x-btn {
-	height: 50px;
-	width: 50px;
+	height: 30px;
+	width: 30px;
 	margin-top: 20px;
 	margin-right: 20px;
 	cursor: pointer;
-	position: relative;
+	position: absolute;
 	transition: .2s opacity;
 	opacity: 1;
+	background: transparent;
+	border: none;
+	right: 0;
+	z-index: 3;
 }
 .x-btn:hover {
 	opacity: .6;
@@ -50,18 +45,19 @@
 	position: absolute;
 	top: 40%;
 	left: 10%;
-	background: rgb(255, 255, 255);
+	background: white;
 	width: 100%;
-	height: 7px;
+	height: 4px;
 	border-radius: 10px;
 }
 .x-btn:before {
 	transform: rotate(45deg);
-	transform-origin: center center;
 }
 .x-btn:after {
 	transform: rotate(-45deg);
-	transform-origin: center center;
+}
+.x-btn:focus {
+	outline: none;
 }
 
 .carousel-btn {
@@ -101,3 +97,5 @@
 .carousel-btn:focus {
 	outline: none;
 }
+
+

@@ -5,23 +5,35 @@ import { Carousel } from 'react-responsive-carousel';
 class PhotoCarousel extends Component {
 	constructor(props) {
 		super(props);
+		this.handleCloseClick = this.handleCloseClick.bind(this);
 	}
 
+	componentDidMount() {
+		document.addEventListener('click', this.handleCloseClick, false);
+	}
+
+	componentWillUnmount() {
+		document.removeEventListener('click', this.handleCloseClick, false);
+	}
+
+	handleCloseClick(event) {
+		if (this.node.contains(event.target) || (!this.node.contains(event.target) && !this.x.contains(event.target))) {
+			this.props.destroy();
+		}
+	}
 	render() {
 		return (
-			<div className="pop-up-border">
-				<div className="x-btn" />
-				<div className="photo-display">
-					<Carousel showThumbs={false} showStatus={false} width={500}>
-						{this.props.content.map((el, i) => {
-							return (
-								<div className="photoSize">
-									<img src={this.props.content[i]} />
-								</div>
-							);
-						})}
-					</Carousel>
-				</div>
+			<div className="photo-display" ref={(x) => (this.x = x)}>
+				<button className="x-btn" ref={(node) => (this.node = node)} />
+				<Carousel className="carousel-custom" showThumbs={false} showStatus={false} width={1000} height={800}>
+					{this.props.content.map((el, i) => {
+						return (
+							<div className="photoSize">
+								<img className="img-popup" src={this.props.content[i]} />
+							</div>
+						);
+					})}
+				</Carousel>
 			</div>
 		);
 	}
