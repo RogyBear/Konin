@@ -1,22 +1,149 @@
 .white-box {
 	display: flex;
 	justify-content: center;
-	position: relative;
+	position: absolute;
 	width: 50%;
+	height: 100%;
 	overflow: hidden;
 	color: #fff;
 	display: flex;
 	justify-content: center;
+	left: 0;
+	@include mQ(1250px) {
+		position: relative;
+		width: 100%;
+		height: 110rem;
+
+		@include mQ(760px) {
+			height: 80rem;
+		}
+		@include mQ(730px) {
+			height: 60rem;
+		}
+
+		@include mQ(480px) {
+			height: 40rem;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			width: 27rem;
+			height: 400px;
+			background: transparent;
+			top: 305px;
+			left: 183px;
+			z-index: 0;
+			border: 16px solid #fbe751;
+			@include mQ(1020px) {
+				left: 120px;
+			}
+			@include mQ(970px) {
+				width: 23rem;
+				left: 103px;
+			}
+			@include mQ(760px) {
+				width: 18rem;
+				left: 84px;
+				top: 190px;
+				height: 140px;
+				border: 9px solid #fbe751;
+			}
+			@include mQ(550px) {
+				width: 14rem;
+				left: 55px;
+				top: 197px;
+			}
+			@include mQ(480px) {
+				width: 15rem;
+				left: 63px;
+				top: 160px;
+			}
+			@include mQ(420px) {
+				width: 11rem;
+				left: 50px;
+				top: 163px;
+				height: 91px;
+				border: 6px solid #fbe751;
+			}
+			@include mQ(350px) {
+				width: 8rem;
+				left: 38px;
+				top: 163px;
+				height: 81px;
+			}
+		}
+	}
 
 	&__info {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		margin-left: 13rem;
 		position: absolute;
-		left: 153px;
+		left: 280px;
 		@include mQ(1480px) {
-			margin-left: -9rem;
+			left: 60px;
+		}
+		@include mQ(1250px) {
+			width: 100%;
+			position: static;
+			&::before {
+				position: absolute;
+				bottom: 20px;
+				right: 130px;
+				border-width: 20px 0 20px 40px;
+				content: '';
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 25px 0 25px 45px;
+				border-color: transparent transparent transparent #fbe751;
+				@include mQ(895px) {
+					border-width: 20px 0 20px 40px;
+					bottom: 40px;
+					right: 55px;
+				}
+				@include mQ(770px) {
+					bottom: 20px;
+				}
+				@include mQ(730px) {
+					border-width: 15px 0 15px 30px;
+					bottom: 10px;
+				}
+				@include mQ(480px) {
+					border-width: 10px 0 10px 20px;
+					bottom: 10px;
+					right: 30px;
+				}
+			}
+			&::after {
+				content: 'Подробнее';
+				bottom: 40px;
+				right: 191px;
+				position: absolute;
+				color: #3b204d;
+				font-family: 'Circe';
+				font-size: 2.2rem;
+				line-height: 9px;
+				opacity: 0.5;
+				@include mQ(895px) {
+					font-size: 2rem;
+					bottom: 54px;
+					right: 112px;
+				}
+				@include mQ(770px) {
+					bottom: 35px;
+				}
+				@include mQ(730px) {
+					bottom: 20px;
+					font-size: 1.5rem;
+					right: 10rem;
+				}
+				@include mQ(480px) {
+					bottom: 16px;
+					font-size: 1rem;
+					right: 6rem;
+				}
+			}
 		}
 
 		&__name {
@@ -24,7 +151,16 @@
 			margin-top: 4rem;
 			margin-bottom: 10rem;
 			@include mQ(1480px) {
-				margin-left: 6rem;
+				margin-left: 10rem;
+			}
+			@include mQ(1250px) {
+				margin-top: 1rem;
+				margin-left: 2rem;
+				order: 0;
+				margin-bottom: 3rem;
+			}
+			@include mQ(760px) {
+				height: 25%;
 			}
 		}
 		&__whiteBox {
@@ -39,6 +175,9 @@
 			@include mQ(1480px) {
 				height: 125px;
 				width: 190px;
+			}
+			@include mQ(1250px) {
+				display: none;
 			}
 		}
 		&__title {
@@ -57,6 +196,38 @@
 			@include mQ(1480px) {
 				margin-right: 16rem;
 			}
+			@include mQ(1250px) {
+				order: 2;
+				margin-top: 2rem;
+				font-size: 3rem;
+				margin-right: 29rem;
+				text-align: left;
+				line-height: 1.4;
+			}
+			@include mQ(1085px) {
+				font-size: 2.7rem;
+				margin-right: 26rem;
+				margin-bottom: 1.5rem;
+			}
+			@include mQ(895px) {
+				margin-right: 15rem;
+			}
+			@include mQ(730px) {
+				font-size: 1.8rem;
+				margin-right: 12rem;
+				margin-top: 1.5rem;
+				margin-bottom: 1.5rem;
+			}
+			@include mQ(620px) {
+				font-size: 1.2rem;
+				margin-right: 11rem;
+			}
+			@include mQ(480px) {
+				font-size: 1rem;
+				margin-right: 7rem;
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+			}
 		}
 		&__text {
 			font-family: 'Circe', 'sans-serif';
@@ -71,6 +242,46 @@
 			@include mQ(1480px) {
 				margin-left: 8rem;
 			}
+			@include mQ(1250px) {
+				margin-right: 83px;
+				order: 3;
+				align-self: flex-end;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				width: 445px;
+				height: 81px;
+				display: -webkit-box;
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+			}
+			@include mQ(1085px) {
+				font-size: 15px;
+				width: 40rem;
+				line-height: 1.4;
+				height: 10rem;
+				-webkit-line-clamp: 5;
+			}
+
+			@include mQ(895px) {
+				margin-right: 3rem;
+				height: 8rem;
+				-webkit-line-clamp: 4;
+				margin-right: -35px;
+			}
+			@include mQ(730px) {
+				width: 30rem;
+			}
+			@include mQ(620px) {
+				width: 22rem;
+				font-size: 12px;
+				margin-right: 0;
+			}
+			@include mQ(480px) {
+				width: 14rem;
+				font-size: 8px;
+				margin-right: 17px;
+				height: 4.5rem;
+			}
 			span {
 				font-weight: bold;
 			}
@@ -79,6 +290,12 @@
 		#root {
 			@include mQ(1480px) {
 				margin-left: 8.5rem;
+			}
+			@include mQ(1250px) {
+				position: absolute;
+				z-index: 10;
+				left: 0;
+				top: 1100px;
 			}
 		}
 
@@ -91,9 +308,65 @@
 			color: #e9487e;
 			text-shadow: 1px 1px 0px #00afc6;
 			position: relative;
+
 			@include mQ(1480px) {
 				margin-left: 50%;
 				transform: translateX(-50%);
+			}
+			@include mQ(1250px) {
+				align-self: flex-end;
+				margin-top: 31px;
+				margin-right: 20rem;
+				font-size: 4rem;
+				order: 1;
+				margin-left: 0;
+				transform: none;
+
+				&::after {
+					content: '';
+					background: #80d7e3;
+					width: 331px;
+					height: 5px;
+					position: absolute;
+					top: 30px;
+					left: 20px;
+					@include mQ(1080px) {
+						width: 29rem;
+					}
+					@include mQ(730px) {
+						width: 21rem;
+					}
+					@include mQ(620px) {
+						width: 17rem;
+					}
+					@include mQ(480px) {
+						width: 13rem;
+						height: 3px;
+						top: 24px;
+						left: 8px;
+					}
+				}
+			}
+
+			@include mQ(1080px) {
+				font-size: 3.5rem;
+			}
+			@include mQ(895px) {
+				margin-right: 8rem;
+			}
+			@include mQ(750px) {
+				// margin-top: 10px;
+			}
+			@include mQ(730px) {
+				font-size: 2.6rem;
+				margin-right: 5rem;
+			}
+			@include mQ(620px) {
+				font-size: 2.1rem;
+			}
+			@include mQ(480px) {
+				font-size: 15px;
+				margin-right: 3rem;
 			}
 			&__blue-box {
 				content: '';
@@ -106,6 +379,53 @@
 				background: #fbe751;
 				z-index: -2;
 				opacity: 0;
+			}
+		}
+		&__suit {
+			display: none;
+			@include mQ(1250px) {
+				display: inline;
+				position: absolute;
+				z-index: 1;
+				height: 150rem;
+				top: 180px;
+				left: 70px;
+			}
+			@include mQ(1020px) {
+				left: 0;
+			}
+			@include mQ(970px) {
+				display: inline;
+				position: absolute;
+				z-index: 1;
+				height: 130rem;
+				top: 180px;
+				left: 0px;
+			}
+			@include mQ(760px) {
+				height: 100rem;
+				top: 90px;
+				left: 0px;
+			}
+			@include mQ (550px) {
+				height: 79rem;
+				top: 119px;
+				left: -7px;
+			}
+			@include mQ(480px) {
+				height: 81rem;
+				top: 79px;
+				left: 5px;
+			}
+			@include mQ(420px) {
+				height: 59rem;
+				top: 102px;
+				left: 5px;
+			}
+			@include mQ(350px) {
+				height: 45rem;
+				top: 121px;
+				left: 5px;
 			}
 		}
 	}

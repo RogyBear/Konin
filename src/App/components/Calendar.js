@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { getDay, getDaysInMonth, startOfMonth, format } from 'date-fns';
 import { ru } from 'date-fns/locale';
-import '../css/Calendar.css';
+import '../css/Calendar.scss';
 import { gapi } from 'gapi-script';
 import Spinner from './Spinner';
 

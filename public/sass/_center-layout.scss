@@ -3,10 +3,13 @@
 	height: 905px;
 	position: absolute;
 	left: 50%;
-	top: 520px;
+	top: 475px;
 	transform: translate3d(-50%, -47%, 0);
 	overflow: hidden;
 	z-index: 2;
+	@include mQ(1250px) {
+		display: none;
+	}
 	&__suit,
 	&__casual {
 		height: 100%;

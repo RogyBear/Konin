@@ -3,45 +3,126 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-.container {
-	position: relative;
+html,
+body {
+	max-width: 100%;
+	overflow: hidden;
+	@include mQ(1250px) {
+		overflow-y: scroll;
+	}
+}
+.wrapper {
+	display: flex;
+	position: absolute;
+	width: 1920px;
+	height: 100%;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	@include mQ(1480px) {
+		width: 1480px;
+	}
+	@include mQ(1250px) {
+		flex-direction: column;
+		width: 100%;
+		height: 1500px;
+	}
+}
 
-	.wrapper {
+.color-change-purple {
+	height: 100%;
+	background: linear-gradient(180deg, #371f4a 0%, #5b2866 100%);
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50%;
+	z-index: -1;
+	@include mQ(1250px) {
+		display: none;
+	}
+}
+.color-change-white {
+	height: 100%;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	z-index: -2;
+	@include mQ(1480px) {
+		display: none;
+	}
+}
+
+.mobile-calendar {
+	display: none;
+	@include mQ(1250px) {
+		display: block;
+	}
+}
+
+.order-box {
+	@include mQ(1250px) {
 		display: flex;
-		position: absolute;
-		width: 100vw;
-		height: 100vh;
-		top: 0;
-		left: 50%;
-		transform: translateX(-50%);
-		@include mQ(1480px) {
-			width: 1480px;
+		justify-content: flex-start;
+		margin: {
+			left: 90px;
+			right: 90px;
+			top: 25px;
+			bottom: 25px;
 		}
 	}
 
-	.white-box {
-		width: 50%;
-	}
-	.purple-box {
-		height: 100%;
-		width: 50%;
-	}
-	.color-change-purple {
-		height: 100%;
-		background: linear-gradient(180deg, #371f4a 0%, #5b2866 100%);
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 50%;
-		z-index: -1;
-	}
-	.color-change-white {
-		height: 100%;
-		background: #fff;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 50%;
-		z-index: -2;
+	.order {
+		display: none;
+		@include mQ(1250px) {
+			background: #371f4a;
+			color: white;
+			flex: 1 1 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 8rem;
+			font-family: 'Circe';
+			line-height: 1;
+			position: relative;
+			cursor: pointer;
+			z-index: 0;
+			&__triangle {
+				position: absolute;
+				top: 125px;
+				right: -50px;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 40px 0 40px 80px;
+				border-color: transparent transparent transparent #371f4a;
+				line-height: 0px;
+				&::after {
+					content: '';
+					position: absolute;
+					top: -45px;
+					right: -13px;
+					display: block;
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: 45px 0 45px 90px;
+					border-color: transparent transparent transparent white;
+					line-height: 0px;
+					z-index: -1;
+				}
+			}
+
+			&__text {
+				text-transform: uppercase;
+				line-height: 1;
+				font-weight: 100;
+				&__bold {
+					font-family: 'Circe-bold';
+					font-weight: bold;
+				}
+			}
+		}
 	}
 }
