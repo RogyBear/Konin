@@ -7,8 +7,8 @@ html,
 body {
 	max-width: 100%;
 	overflow: hidden;
-	@include mQ(1250px) {
-		overflow-y: scroll;
+	@include mQ(1480px){
+		
 	}
 }
 .wrapper {
@@ -22,10 +22,9 @@ body {
 	@include mQ(1480px) {
 		width: 1480px;
 	}
-	@include mQ(1250px) {
-		flex-direction: column;
+	@include mQ(1060px) {
 		width: 100%;
-		height: 1500px;
+		height: auto;
 	}
 }
 
@@ -37,7 +36,7 @@ body {
 	right: 0;
 	width: 50%;
 	z-index: -1;
-	@include mQ(1250px) {
+	@include mQ(1060px) {
 		display: none;
 	}
 }
@@ -49,80 +48,31 @@ body {
 	left: 0;
 	width: 50%;
 	z-index: -2;
-	@include mQ(1480px) {
+	@include mQ(1060px) {
 		display: none;
 	}
 }
 
 .mobile-calendar {
 	display: none;
-	@include mQ(1250px) {
-		display: block;
+}
+
+.mobile-container {
+	@include mQ(1060px) {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
 	}
 }
 
 .order-box {
-	@include mQ(1250px) {
+	@include mQL(1060px) {
 		display: flex;
-		justify-content: flex-start;
-		margin: {
-			left: 90px;
-			right: 90px;
-			top: 25px;
-			bottom: 25px;
-		}
+		width: 100%;
+		height: 100%;
+		max-width: 100%;
 	}
-
 	.order {
-		display: none;
-		@include mQ(1250px) {
-			background: #371f4a;
-			color: white;
-			flex: 1 1 0;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			font-size: 8rem;
-			font-family: 'Circe';
-			line-height: 1;
-			position: relative;
-			cursor: pointer;
-			z-index: 0;
-			&__triangle {
-				position: absolute;
-				top: 125px;
-				right: -50px;
-				width: 0;
-				height: 0;
-				border-style: solid;
-				border-width: 40px 0 40px 80px;
-				border-color: transparent transparent transparent #371f4a;
-				line-height: 0px;
-				&::after {
-					content: '';
-					position: absolute;
-					top: -45px;
-					right: -13px;
-					display: block;
-					width: 0;
-					height: 0;
-					border-style: solid;
-					border-width: 45px 0 45px 90px;
-					border-color: transparent transparent transparent white;
-					line-height: 0px;
-					z-index: -1;
-				}
-			}
-
-			&__text {
-				text-transform: uppercase;
-				line-height: 1;
-				font-weight: 100;
-				&__bold {
-					font-family: 'Circe-bold';
-					font-weight: bold;
-				}
-			}
-		}
+		display: block;
 	}
 }

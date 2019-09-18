@@ -1,19 +1,19 @@
 .purple-box {
 	position: absolute;
 	right: 0;
-
 	width: 50%;
 	height: 100%;
 	overflow: hidden;
 	color: #fff;
 	display: flex;
 	justify-content: center;
-	@include mQ(1250px) {
+	height: 100%;
+	@include mQ(1060px) {
 		position: relative;
+		overflow: visible;
 		width: 100%;
-		height: 95rem;
-
 		background: linear-gradient(180deg, #371f4a 0%, #5b2866 100%);
+		height: 40rem;
 	}
 	&__info {
 		display: flex;
@@ -23,50 +23,47 @@
 		position: absolute;
 		right: 200px;
 		font-family: 'Circe', 'sans-serif';
-		overflow-y: hidden;
+		a {
+			text-decoration: none;
+			font-family: 'Circe-bold';
+			font-size: 2.2rem; 
+			line-height: 28px;
+			letter-spacing: -0.01em;
+			color: #FFFFFF;
+
+		}
 		@include mQ(1480px) {
 			right: -2.6rem;
 		}
-		@include mQ(1250px) {
-			width: 100%;
-			height: 100%;
+		@include mQ(1060px) {
+			overflow-y: visible;
+			position: relative;
 			right: 0;
 			overflow: hidden;
-			padding-left: 50px;
-			padding-top: 90px;
-			&::after {
-				content: '';
-				position: absolute;
-				width: 32rem;
-				height: 400px;
-				background: transparent;
-				top: 173px;
-				right: 206px;
-				z-index: 0;
-				border: 16px solid #fbe751;
-			}
+			width: 100%;
 		}
+
 		.pink-angle-box {
 			display: none;
-			@include mQ(1250px) {
-				display: block;
-				position: relative;
-			}
+			// @include mQ(1250px) {
+			// 	display: block;
+			// 	position: relative;
+			// }
 		}
 		.pink-angle {
-			@include mQ(1250px) {
-				position: absolute;
-				top: -122px;
-				right: -150px;
-			}
+			// @include mQ(1250px) {
+			// 	position: absolute;
+			// 	top: -122px;
+			// 	right: -150px;
+			// }
 		}
 		.pink-angle-opposite {
-			@include mQ(1250px) {
-				position: absolute;
-				top: -122px;
-				right: -270px;
-				transform: scale(-1, 1);
-			}
+			// @include mQ(1250px) {
+			// 	position: absolute;
+			// 	top: -122px;
+			// 	right: -270px;
+			// 	transform: scale(-1, 1);
+			// }
 		}
 		&__about {
 			display: flex;
@@ -79,7 +76,7 @@
 			margin-top: 6rem;
 			z-index: 2;
 			letter-spacing: 1px;
-			@include mQ(1250px) {
+			@include mQ(1060px) {
 				display: none;
 			}
 			.smallPurpleTriangle {
@@ -88,8 +85,33 @@
 			&__list {
 				display: flex;
 				list-style: none;
-			}
-			@include mQ(1480px) {
+				&__item{
+					margin-left:1.5rem;
+					text-shadow: 1px 1px 0px #00AFC6;
+					
+				}
+					
+				&__link{
+					max-width: 100%;
+					&::before{
+						content:'';
+						position: absolute;
+						height:9px;
+						background: #FBE751;
+						width:100%;
+						top: 17px;
+						z-index:-1;
+						opacity:0;
+						transition: .2s opacity;
+						
+					}
+				&:hover::before{
+					opacity:1;
+					transition: .2s opacity;
+				}
+					
+				
+				}
 			}
 		}
 		&__box2 {
@@ -97,26 +119,31 @@
 			justify-content: space-between;
 			align-items: flex-start;
 			width: 100%;
-			margin-top: 10rem;
+			margin-top: 8.5rem;
 			position: relative;
+			@include mQ(1060px) {
+				display: none;
+			}
 		}
 
 		&__social-media {
 			display: flex;
-			margin-right: 10rem;
+			margin-right: 21rem;
+			position: relative;
+    		z-index: 3;
 			@include mQ(1480px) {
-				margin-right: 23rem;
+				margin-right: 25rem;
 			}
-			@include mQ(1250px) {
-				display: none;
-			}
+
 			&__icon {
 				list-style: none;
 				svg {
 					cursor: pointer;
+					
 					&:hover path {
 						fill: #fbe751;
 					}
+					
 				}
 			}
 		}
@@ -133,34 +160,34 @@
 				font-size: 3.8rem;
 			}
 			@include mQ(1250px) {
-				font-size: 2.8rem;
-				width: 166px;
-				margin-left: 10rem;
-				margin-top: -6rem;
+				font-size: 3rem;
+				width: 46rem;
 			}
 		}
 		&__text {
 			font-family: 'Circe', 'sans-serif';
 			font-size: 1.9rem;
-			line-height: 2.8rem;
+			line-height: 2.7rem;
 			letter-spacing: -0.01em;
 			position: relative;
 			z-index: 1;
-			margin-top: 3.5rem;
+			margin-top: 2rem;
 			width: 48rem;
 			align-self: flex-start;
 			@include mQ(1480px) {
 				width: 42rem;
 			}
 			@include mQ(1250px) {
-				align-self: flex-start;
-				padding-left: 75px;
-				
+				width: 33rem;
+				font-size: 1.5rem;
+				line-height: 2.5rem;
+			}
+			@include mQ(1060px) {
+				width: 30rem;
 			}
 			p {
 				position: relative;
 				z-index: 3;
-				
 			}
 			.purpleRectangle {
 				position: absolute;
@@ -170,16 +197,25 @@
 				top: 55%;
 				transform: translate(-55%, -57%);
 				z-index: 0;
+				@include mQ(1480px) {
+					height: 288.99px;
+					top: 57%;
+				}
 				@include mQ(1250px) {
-					display: none;
+					height: 264.99px;
+					top: 57%;
+					left: 23%;
+				}
+				@include mQ(1060px) {
+					visibility: hidden;
 				}
 			}
 		}
 
 		&__vedushy {
 			align-self: flex-end;
-			margin-right: 9rem;
-			margin-top: 12rem;
+			margin-right: 11rem;
+			margin-top: 16rem;
 			font-family: 'Kontanter', 'sans-serif';
 			font-size: 25px;
 			line-height: 30px;
@@ -192,14 +228,11 @@
 				transform: translateX(-50%);
 			}
 			@include mQ(1250px) {
-				order: -1;
-				margin-right: 30rem;
-				align-self: flex-start;
-				margin-right: 0px;
-				margin-left: 18rem;
-				font-size: 5rem;
-				font-size: 4.5rem;
+				margin-top: 8.7rem;
+				margin-right: 50%;
+				font-size: 21px;
 			}
+
 			&__blue-box {
 				content: '';
 				position: absolute;
@@ -211,34 +244,16 @@
 				background: #2a6a93;
 				z-index: -1;
 				opacity: 0;
-				@include mQ(1250px) {
-					background: #e9487e;
-					opacity: 1;
-					width: 275px;
-					left: 0;
-					top: 1rem;
-					&::after {
-						content: '';
-						position: absolute;
-						background: #e9487e;
-						width: 15px;
-						height: 15px;
-						top: -100px;
-						right: -110px;
-						transform: rotate(45deg);
-					}
-				}
 			}
 		}
 		&__casual {
 			display: none;
-			@include mQ(1250px) {
-				display: inline;
+			@include mQ(1060px) {
+				display: block;
 				position: absolute;
-				right: -40px;
-				top: 39px;
-				z-index: 2;
-				width: 77rem;
+				top: 15%;
+				right: -56px;
+				height: 311%;
 			}
 		}
 	}

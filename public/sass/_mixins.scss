@@ -3,3 +3,9 @@
 		@content;
 	}
 }
+@mixin mQL($arg) {
+	@media screen and (min-width: $arg) {
+		@content;
+	}
+}
+

@@ -17,7 +17,7 @@
 	cursor: pointer;
 	position: relative;
 	@include mQ(1250px) {
-		font-size: 22px;
+		font-size: 12px;
 	}
 }
 .day {
@@ -57,34 +57,21 @@
 }
 .month-selector {
 	display: flex;
-	/* height: 50px; */
 	justify-content: space-around;
 	align-items: center;
 	width: 170px;
 	font-family: 'Circe', 'sans-serif';
 	font-size: 15px;
-
 	letter-spacing: -0.01em;
 	transform: rotate(-90deg);
-
 	color: #000;
 	top: 80px;
 	left: -80px;
 	position: absolute;
 	@include mQ(1250px) {
-		display: flex;
-
-		justify-content: space-around;
-		align-items: center;
-		width: 356px;
-		font-family: 'Circe', 'sans-serif';
-		font-size: 27px;
-		letter-spacing: -0.01em;
-		transform: rotate(-90deg);
-		color: #000;
-		position: absolute;
-		top: 188px;
-		left: -155px;
+		font-size: 12px;
+		top: 40px;
+		left: 10px;
 	}
 }
 
@@ -92,9 +79,6 @@
 	display: flex;
 	position: relative;
 	z-index: 1;
-	@include mQ(1250px) {
-		
-	}
 }
 
 .forward-btn {
@@ -128,11 +112,10 @@
 	top: -10px;
 	left: 25px;
 	@include mQ(1250px) {
-		grid-template-columns: repeat(7, 60px);
-		grid-template-rows: repeat(6, 60px);
-		position: relative;
-		top: 0;
-		left: 55px;
+		grid-template-columns: repeat(7, 30px);
+		grid-template-rows: repeat(6, 30px);
+		top: -40px;
+		left: 115px;
 	}
 }
 

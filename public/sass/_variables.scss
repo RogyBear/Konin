@@ -39,6 +39,9 @@ html {
 	@include mQ(1480px) {
 		right: 15rem;
 	}
+	// @include mQ(1250px) {
+	// 	display: none;
+	// }
 }
 .blueDotPurple {
 	position: absolute;
@@ -57,9 +60,9 @@ html {
 	top: 92rem;
 	z-index: 2;
 	cursor: pointer;
-	@include mQ(1250px) {
-		display: none;
-	}
+	// @include mQ(1250px) {
+	// 	display: none;
+	// }
 }
 .yellowArrowLeft {
 	left: 48.6%;
@@ -71,17 +74,17 @@ html {
 }
 .pinkRibbon {
 	z-index: 1;
-	@include mQ(1250px) {
-		position: absolute;
-		top: -225px;
-		left: -120px;
-	}
+	// @include mQ(1250px) {
+	// 	position: absolute;
+	// 	top: -225px;
+	// 	left: -120px;
+	// }
 }
 .purpleBubble {
 	position: absolute;
 	top: 0;
 	right: 0;
-	@include mQ(1250px) {
+	@include mQ(1060px) {
 		display: none;
 	}
 }
@@ -102,21 +105,12 @@ html {
 	top: 41.71px;
 	z-index: -1;
 	transform: translateX(-39%);
-	@include mQ(1250px) {
-		left: -50px;
-		top: 150px;
-		width: auto;
-		height: 300px;
-	}
-	@include mQ(750px) {
-		height: 190px;
-	}
-	@include mQ(550px) {
-		top: 90px;
-	}
-	@include mQ(350px) {
-		top: 57px;
-		height: 170px;
+	@include mQ(1060px) {
+		width: 321.2px;
+		height: 306.2px;
+		left: -7%;
+		top: 219.71px;
+		z-index: -1;
 	}
 }
 .purpleDiamond {
@@ -151,7 +145,11 @@ html {
 	box-sizing: border-box;
 	z-index: 1;
 	@include mQ(1250px) {
-		display: none;
+		height: 529px;
+		top: 515px;
+	}
+	@include mQ(1060px) {
+		visibility: hidden;
 	}
 }
 .small-purple-bubble {
@@ -161,19 +159,10 @@ html {
 	@include mQ(1480px) {
 		right: 11.5%;
 	}
-	@include mQ(1250px) {
-		top: 160px;
-		right: -90px;
-	}
-	@include mQ(890px) {
-		height: 9%;
-	}
-	@include mQ(730px) {
-		top: 90px;
-	}
-	@include mQ(480px) {
-		height: 7.6%;
-	}
+	// @include mQ(1250px) {
+	// 	top: 160px;
+	// 	right: -90px;
+	// }
 }
 .half-blue-circle {
 	position: absolute;
@@ -182,28 +171,12 @@ html {
 	@include mQ(1480px) {
 		right: 9.5%;
 	}
-	@include mQ(1250px) {
-		position: absolute;
-		top: 11.5%;
-		right: 5.5%;
-		transform: scale(-1, 1);
-	}
-	@include mQ(1000px) {
-		right: 6.5%;
-	}
-	@include mQ(890px) {
-		top: 10.5%;
-		right: 3%;
-	}
-	@include mQ(730px) {
-		top: 6%;
-		right: 4%;
-	}
-	@include mQ(480px) {
-		top: 6.5%;
-		right: 2.6%;
-		height: 2.4%;
-	}
+	// @include mQ(1250px) {
+	// 	position: absolute;
+	// 	top: 11.5%;
+	// 	right: 5.5%;
+	// 	transform: scale(-1, 1);
+	// }
 }
 .small-blue-square {
 	position: absolute;
@@ -212,23 +185,10 @@ html {
 	@include mQ(1480px) {
 		right: 11.2%;
 	}
-	@include mQ(1250px) {
-		top: 21%;
-		right: 5.2%;
-	}
-	@include mQ(890px) {
-		top: 19%;
-		right: 2.2%;
-	}
-	@include mQ(730px) {
-		top: 14%;
-		right: 2.6%;
-	}
-	@include mQ(480px) {
-		top: 12.5%;
-		right: 1.8%;
-		height: 1%;
-	}
+	// @include mQ(1250px) {
+	// 	top: 21%;
+	// 	right: 5.2%;
+	// }
 }
 .yellowTriangle {
 	position: absolute;

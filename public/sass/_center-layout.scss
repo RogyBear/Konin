@@ -7,7 +7,8 @@
 	transform: translate3d(-50%, -47%, 0);
 	overflow: hidden;
 	z-index: 2;
-	@include mQ(1250px) {
+	
+	@include mQ(1060px) {
 		display: none;
 	}
 	&__suit,
