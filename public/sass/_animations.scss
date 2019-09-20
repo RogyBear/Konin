@@ -47,6 +47,35 @@
 	}
 }
 
+@keyframes expandPurple {
+	0% {
+		height: 400px;
+	}
+	100% {
+		height: 550px;
+	}
+}
+@keyframes expandPurple650 {
+	0% {
+		height: 400px;
+	}
+	100% {
+		height: 650px;
+	}
+}
+.expandPurple {
+	
+	animation: expandPurple 1.2s;
+	animation-fill-mode: forwards;
+	@include mQ(465px){
+		animation: expandPurple650 1.2s;
+		animation-fill-mode: forwards;
+	}
+	@include mQ(450px){
+		animation: expandPurple 1.2s;
+		animation-fill-mode: forwards;
+	}
+}
 .displayBlock {
 	animation: displayBlock 1.2s;
 	animation-fill-mode: forwards;

@@ -7,22 +7,34 @@ html,
 body {
 	max-width: 100%;
 	overflow: hidden;
-	@include mQ(1480px){
-		
+	@include mQHeight(969px){
+		overflow-y: visible;
+		overflow-x: hidden;
+	}
+	@include mQ(1160px){
+		overflow-y: visible;
+		overflow: visible;
+		overflow-x:hidden;
 	}
 }
 .wrapper {
 	display: flex;
 	position: absolute;
 	width: 1920px;
-	height: 100%;
+	height: 969px;
 	top: 0;
 	left: 50%;
 	transform: translateX(-50%);
 	@include mQ(1480px) {
 		width: 1480px;
 	}
-	@include mQ(1060px) {
+	@include mQ(1366px){
+		height: 100%;
+	}
+	@include mQ(1365px){
+		height: 969px;
+	}
+	@include mQ(1160px) {
 		width: 100%;
 		height: auto;
 	}
@@ -36,7 +48,7 @@ body {
 	right: 0;
 	width: 50%;
 	z-index: -1;
-	@include mQ(1060px) {
+	@include mQ(1160px) {
 		display: none;
 	}
 }
@@ -48,31 +60,85 @@ body {
 	left: 0;
 	width: 50%;
 	z-index: -2;
-	@include mQ(1060px) {
+	@include mQ(1160px) {
 		display: none;
 	}
 }
 
-.mobile-calendar {
-	display: none;
-}
+
 
 .mobile-container {
-	@include mQ(1060px) {
+	
+	@include mQ(1160px) {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
+		
+	}
+	.mobile-calendar {
+		display: none;
+		@include mQ(1160px) {
+			display: flex;
+		
+		}
 	}
 }
 
 .order-box {
-	@include mQL(1060px) {
+	display:none;
+	@include mQ(1160px) {
 		display: flex;
 		width: 100%;
-		height: 100%;
+		height: 37rem;
 		max-width: 100%;
+		justify-content: space-between;
+		padding-top: 4rem;
+		
 	}
 	.order {
 		display: block;
+		position: relative;
+		z-index:1;
+		
+		&__triangle{
+			position: absolute;
+			top: 120px;
+			right: 31px;
+			z-index: 2;
+			width: 0;
+			height: 0;
+			border-top: 30px solid transparent;
+			border-bottom: 30px solid transparent;
+			border-left: 49px solid #FFF;
+			
+			&::after{
+				content: '';
+				position: absolute;
+				z-index: 1;
+				right: 12px;
+				top: -25px;
+				width: 0;
+				height: 0;
+				border-top: 25px solid transparent;
+				border-bottom: 25px solid transparent;
+				border-left: 38px solid #5b2866;
+			}
+		}
+		&__text{
+			text-align:center;
+			&__bold{
+				font-family: 'Circe-bold';
+				padding-top: 7rem;
+				font-size:9rem;
+			}
+			font-family: 'Circe';
+			line-height: .7;
+			font-size:8rem;
+			color:#FFF;
+			height: 28rem;
+   	 		width: 42rem;
+    		background: #5b2866;
+    		margin-right: 6rem;
+		}
 	}
 }

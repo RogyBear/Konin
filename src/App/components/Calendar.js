@@ -158,7 +158,7 @@ class Calendar extends Component {
 			switch (el) {
 				case 'FreeBusy':
 					params = {
-						str: 'Полу-занят',
+						str: `Полу${'\u2011'}занат`,
 						dayCode: 'purpleBlueDay',
 						start: startDay,
 						firstDay: i
@@ -186,7 +186,7 @@ class Calendar extends Component {
 
 			return (
 				<div style={params.firstDay === 0 ? { gridColumnStart: startDay } : null} className={params.dayCode}>
-					{i + 1} <span className="tooltiptext">{params.str}</span>
+					{i + 1} <span className="tooltiptext" >{params.str}</span>
 				</div>
 			);
 		});
@@ -200,7 +200,7 @@ class Calendar extends Component {
 					<button
 						className="reverse-btn"
 						name="displayMonth"
-						value={this.state.displayMonth === 0 ? 'minusOneYear' : 'dec'}
+						value={this.state.displayMonth === 0 ? 'addOneYear' : 'inc'}
 						onClick={this.handleData}
 					/>
 					<h3>
@@ -214,7 +214,7 @@ class Calendar extends Component {
 					<button
 						className="forward-btn"
 						name="displayMonth"
-						value={this.state.displayMonth === 11 ? 'addOneYear' : 'inc'}
+						value={this.state.displayMonth === 11 ? 'minusOneYear' : 'dec'}
 						onClick={this.handleData}
 					/>
 				</div>

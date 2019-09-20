@@ -8,12 +8,120 @@
 	display: flex;
 	justify-content: center;
 	height: 100%;
-	@include mQ(1060px) {
+	@include mQ(1160px) {
 		position: relative;
 		overflow: visible;
 		width: 100%;
 		background: linear-gradient(180deg, #371f4a 0%, #5b2866 100%);
 		height: 40rem;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 160px;
+			right: 130px;
+			width: 230px;
+			height: 220px;
+			border: 9px solid #fbe751;
+			z-index: 0;
+		}
+	}
+	@include mQ(940px) {
+		&::before {
+			left: 32rem;
+		}
+		&::after {
+			right: 90px;
+		}
+	}
+	@include mQ(780px) {
+		&::after {
+			right: 105px;
+			width: 200px;
+		}
+	}
+	@include mQ(740px) {
+		&::after {
+			right: 57px;
+		    top: 145px;
+			width: 181px;
+			height: 100px;
+		}
+	}
+	@include mQ(620px) {
+		&::after {
+			right: 45px;
+			width: 130px;
+		}
+	}
+	@include mQ(450px) {
+		height: 30rem;
+		&::after {
+			right: 50px;
+			width: 107px;
+			top: 117px;
+			border: 6px solid #fbe751;
+		}
+	}
+
+	@include mQ(370px) {
+		&::after {
+			right: 25px;
+			width: 100px;
+		}
+	}
+	&__btn {
+		display: none;
+		@include mQ(1160px) {
+			display: block;
+			position: absolute;
+			bottom: 10px;
+			left: 430px;
+			width: 0;
+			height: 0;
+			border-top: 15px solid transparent;
+			border-bottom: 15px solid transparent;
+			border-left: 20px solid #fbe751;
+			cursor: pointer;
+			z-index: 5;
+			&::after {
+				content: 'Подробнее';
+				position: absolute;
+				left: -111px;
+				top: -3px;
+				color: #fff;
+				font-family: 'Circe';
+				font-size: 15px;
+				line-height: 9px;
+				letter-spacing: -0.01em;
+				opacity: .5;
+			}
+		}
+		@include mQ(845px) {
+			left: 316px;
+		}
+		@include mQ(650px) {
+			left: 300px;
+		}
+		@include mQ(610px) {
+			left: 250px;
+			bottom: 22px;
+		}
+		@include mQ(500px) {
+			left: 205px;
+			bottom: 20px;
+		}
+		@include mQ(450px) {
+			border-top: 10px solid transparent;
+			border-bottom: 10px solid transparent;
+			border-left: 19px solid #fbe751;
+			left: 185px;
+			bottom: 12px;
+		}
+		@include mQ(400px) {
+			left: 131px;
+			bottom: 20px;
+		}
 	}
 	&__info {
 		display: flex;
@@ -26,44 +134,71 @@
 		a {
 			text-decoration: none;
 			font-family: 'Circe-bold';
-			font-size: 2.2rem; 
+			font-size: 2.2rem;
 			line-height: 28px;
 			letter-spacing: -0.01em;
-			color: #FFFFFF;
-
+			color: #ffffff;
 		}
 		@include mQ(1480px) {
 			right: -2.6rem;
 		}
-		@include mQ(1060px) {
+		@include mQ(1160px) {
 			overflow-y: visible;
 			position: relative;
 			right: 0;
 			overflow: hidden;
 			width: 100%;
+			padding-left: 12rem;
+		}
+		@include mQ(940px) {
+			padding-left: 7rem;
+		}
+		@include mQ(740px) {
+			padding-left: 7rem;
+		}
+		@include mQ(690px) {
+			padding-left: 4rem;
 		}
 
-		.pink-angle-box {
+		.horn {
 			display: none;
-			// @include mQ(1250px) {
-			// 	display: block;
-			// 	position: relative;
-			// }
-		}
-		.pink-angle {
-			// @include mQ(1250px) {
-			// 	position: absolute;
-			// 	top: -122px;
-			// 	right: -150px;
-			// }
-		}
-		.pink-angle-opposite {
-			// @include mQ(1250px) {
-			// 	position: absolute;
-			// 	top: -122px;
-			// 	right: -270px;
-			// 	transform: scale(-1, 1);
-			// }
+			@include mQ(1160px) {
+				display: block;
+				position: absolute;
+				height: 8rem;
+				right: 182px;
+				top: 80px;
+				&__right {
+					height: 100%;
+					transform: scale(-1, 1);
+				}
+				&__left {
+					height: 100%;
+				}
+			}
+			@include mQ(940px) {
+				right: 140px;
+			}
+			@include mQ(740px) {
+				height: 6.5rem;
+				right: 101px;
+				top: 62px;
+			}
+			@include mQ(620px) {
+				height: 5.2rem;
+				right: 83px;
+				top: 70px;
+			}
+
+			@include mQ(450px) {
+				height: 5rem;
+				right: 71px;
+				top: 55px;
+			}
+			@include mQ(370px) {
+				height: 3.4rem;
+				right: 56px;
+			}
 		}
 		&__about {
 			display: flex;
@@ -76,7 +211,7 @@
 			margin-top: 6rem;
 			z-index: 2;
 			letter-spacing: 1px;
-			@include mQ(1060px) {
+			@include mQ(1160px) {
 				display: none;
 			}
 			.smallPurpleTriangle {
@@ -85,32 +220,30 @@
 			&__list {
 				display: flex;
 				list-style: none;
-				&__item{
-					margin-left:1.5rem;
-					text-shadow: 1px 1px 0px #00AFC6;
-					
+				&__item {
+					margin-left: 1.5rem;
+					text-shadow: 1px 1px 0px #00afc6;
 				}
-					
-				&__link{
+
+				&__link {
 					max-width: 100%;
-					&::before{
-						content:'';
+
+					position: relative;
+					&::before {
+						content: '';
 						position: absolute;
-						height:9px;
-						background: #FBE751;
-						width:100%;
-						top: 17px;
-						z-index:-1;
-						opacity:0;
+						height: 9px;
+						background: #fbe751;
+						width: 103%;
+						top: 19px;
+						z-index: -1;
+						opacity: 0;
 						transition: .2s opacity;
-						
 					}
-				&:hover::before{
-					opacity:1;
-					transition: .2s opacity;
-				}
-					
-				
+					&:hover::before {
+						opacity: 1;
+						transition: .2s opacity;
+					}
 				}
 			}
 		}
@@ -121,7 +254,7 @@
 			width: 100%;
 			margin-top: 8.5rem;
 			position: relative;
-			@include mQ(1060px) {
+			@include mQ(1160px) {
 				display: none;
 			}
 		}
@@ -130,20 +263,21 @@
 			display: flex;
 			margin-right: 21rem;
 			position: relative;
-    		z-index: 3;
+			z-index: 3;
 			@include mQ(1480px) {
 				margin-right: 25rem;
+			}
+			@include mQ(1160px) {
 			}
 
 			&__icon {
 				list-style: none;
 				svg {
 					cursor: pointer;
-					
+
 					&:hover path {
 						fill: #fbe751;
 					}
-					
 				}
 			}
 		}
@@ -163,6 +297,36 @@
 				font-size: 3rem;
 				width: 46rem;
 			}
+			@include mQ(1160px) {
+				order: 1;
+				padding-left: 4rem;
+			}
+			@include mQ(800px) {
+				padding-left: 2rem;
+			}
+			@include mQ(760px) {
+				font-size: 2.7rem;
+			}
+			@include mQ(620px) {
+				line-height: 2;
+				font-size: 2rem;
+				width: 37rem;
+			}
+			@include mQ(500px) {
+				line-height: 2;
+				font-size: 1.6rem;
+				width: 15rem;
+			}
+			@include mQ(420px) {
+				font-size: 1.4rem;
+				padding-left: 0.5rem;
+			}
+			@include mQ(370px) {
+				line-height: 1.7;
+				font-size: 1rem;
+				width: 15rem;
+				padding-left: 1rem;
+			}
 		}
 		&__text {
 			font-family: 'Circe', 'sans-serif';
@@ -174,6 +338,7 @@
 			margin-top: 2rem;
 			width: 48rem;
 			align-self: flex-start;
+
 			@include mQ(1480px) {
 				width: 42rem;
 			}
@@ -182,9 +347,41 @@
 				font-size: 1.5rem;
 				line-height: 2.5rem;
 			}
-			@include mQ(1060px) {
+			@include mQ(1160px) {
 				width: 30rem;
+				order: 2;
+				line-height: 2rem;
+				overflow: hidden;
+				display: -webkit-box;
+				-webkit-line-clamp: 4;
+				-webkit-box-orient: vertical;
 			}
+			@include mQ(620px) {
+				font-size: 12px;
+				width: 23rem;
+			}
+			@include mQ(500px) {
+				font-size: 1.5rem;
+				line-height: 1.6rem;
+				width: 20rem;
+				-webkit-line-clamp: 6;
+			}
+			@include mQ(465px) {
+				width: 16rem;
+			}
+			@include mQ(450px) {
+				width: 17rem;
+				-webkit-line-clamp: 4;
+			}
+			@include mQ(420px) {
+				width: 13.6rem;
+				font-size: 1.2rem;
+			}
+			@include mQ(370px) {
+				font-size: 1.1rem;
+				width: 13rem;
+			}
+
 			p {
 				position: relative;
 				z-index: 3;
@@ -206,7 +403,7 @@
 					top: 57%;
 					left: 23%;
 				}
-				@include mQ(1060px) {
+				@include mQ(1160px) {
 					visibility: hidden;
 				}
 			}
@@ -217,12 +414,14 @@
 			margin-right: 11rem;
 			margin-top: 16rem;
 			font-family: 'Kontanter', 'sans-serif';
-			font-size: 25px;
+			font-size: 30px;
 			line-height: 30px;
 			color: #ffffff;
 			text-shadow: 1px 1px 0px #00afc6;
 			position: relative;
+			visibility: hidden;
 			@include mQ(1480px) {
+				visibility: visible;
 				margin-top: 6rem;
 				margin-right: 40%;
 				transform: translateX(-50%);
@@ -232,12 +431,53 @@
 				margin-right: 50%;
 				font-size: 21px;
 			}
+			@include mQ(1160px) {
+				order: -1;
+				margin-top: 0;
+				margin-right: 0;
+				align-self: flex-start;
+				transform: translate(0);
+				font-size: 45px;
+				margin-top: 10rem;
+				margin-bottom: 2rem;
+				&::after {
+					content: '';
+					width: 100%;
+					height: 10px;
+					top: 7px;
+					left: 7px;
+					position: absolute;
+					background: #e9487e;
+					z-index: -1;
+				}
+			}
+			@include mQ(620px) {
+				font-size: 30px;
+				margin-bottom: 1rem;
+			}
+			@include mQ(500px) {
+				font-size: 20px;
+				margin-bottom: 0;
+				&::after {
+					content: '';
+					width: 100%;
+					height: 6px;
+					top: 12px;
+					left: 7px;
+					position: absolute;
+					background: #e9487e;
+					z-index: -1;
+				}
+			}
+			@include mQ(450px) {
+				margin-top: 7rem;
+			}
 
 			&__blue-box {
 				content: '';
 				position: absolute;
 				display: block;
-				width: 152.6px;
+				width: 180px;
 				height: 15.15px;
 				top: 1.9rem;
 				left: -6px;
@@ -248,12 +488,33 @@
 		}
 		&__casual {
 			display: none;
-			@include mQ(1060px) {
+			@include mQ(1160px) {
 				display: block;
 				position: absolute;
-				top: 15%;
-				right: -56px;
-				height: 311%;
+				top: 2rem;
+				right: 0px;
+				height: 125rem;
+				z-index: 1;
+			}
+			@include mQ(940px) {
+				right: -41px;
+			}
+			@include mQ(740px) {
+				height: 100rem;
+			}
+			@include mQ(620px) {
+				right: -80px;
+				height: 80rem;
+			}
+			@include mQ(450px) {
+				right: -70px;
+				top: 5rem;
+				height: 71rem;
+			}
+			@include mQ(370px) {
+				font-size: 15px;
+				right: -60px;
+				height: 56rem;
 			}
 		}
 	}

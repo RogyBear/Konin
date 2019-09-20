@@ -8,7 +8,7 @@
 	overflow: hidden;
 	z-index: 2;
 	
-	@include mQ(1060px) {
+	@include mQ(1160px) {
 		display: none;
 	}
 	&__suit,
@@ -31,7 +31,8 @@
 		top: 0;
 		left: 0;
 		img {
-			left: 255px;
+			left: 217px;
+    		top: 31px;
 		}
 	}
 	&__casual {
@@ -40,8 +41,8 @@
 		right: 0;
 		z-index: 5;
 		img {
-			right: 188px;
-			top: 9px;
+			right: 235px;
+    		top: 31px;
 		}
 		&__white-konin {
 			top: -37px !important;

@@ -73,6 +73,12 @@
 		top: 40px;
 		left: 10px;
 	}
+	@include mQ(1160px){
+		font-size: 16px;
+    	top: 132px;
+    	left: 0px;
+    	z-index: 3;
+	}
 }
 
 .calendar {
@@ -116,6 +122,14 @@
 		grid-template-rows: repeat(6, 30px);
 		top: -40px;
 		left: 115px;
+	}
+	@include mQ(1160px) {
+		grid-template-columns: repeat(7, 50px);
+		grid-template-rows: repeat(6, 50px);
+		position: relative;
+		top: auto;
+		left: auto;
+		padding-left: 11rem;
 	}
 }
 

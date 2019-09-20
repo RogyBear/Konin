@@ -6,12 +6,16 @@ var slideLeft = document.querySelector('.center-layout__suit');
 var slideRight = document.querySelector('.center-layout__casual');
 var vedushy = document.querySelector('.purple-box__info__vedushy__blue-box');
 var conferanceyo = document.querySelector('.white-box__info__conferanceyo__blue-box');
+var expandButton = document.querySelector('.purple-box__btn');
+var purpleBox = document.querySelector('.purple-box');
+var purpleText = document.querySelector('.purple-box__info__text');
+
 
 var pos = 50;
 
 btn[0].addEventListener('click', function() {
 	if (pos == 50) {
-		//Add Class
+		
 		purpleTransition.classList.remove('leftToCenter', 'rightToCenter');
 		purpleTransition.classList.add('centerToLeft');
 		whiteBoxTransition.classList.add('centerToRight');
@@ -21,7 +25,7 @@ btn[0].addEventListener('click', function() {
 		slideLeft.classList.add('disappear');
 		vedushy.classList.remove('hideBlock');
 		vedushy.classList.add('displayBlock');
-		//Add Style
+	
 
 		pos = 72;
 	} else if (pos == 28) {
@@ -67,3 +71,8 @@ btn[1].addEventListener('click', function() {
 		pos = 50;
 	}
 });
+
+expandButton.addEventListener('click', function(){
+	purpleBox.classList.add('expandPurple');
+	purpleText.style.overflow = 'visible';
+})
