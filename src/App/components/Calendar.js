@@ -31,7 +31,7 @@ class Calendar extends Component {
 		function start() {
 			gapi.client
 				.init({
-					apiKey: 'AIzaSyDrKBMhLmh1-M3ubOcxqLQuhQrHEx2_U8Y'
+					apiKey: 'AIzaSyAp_gcUUbv3gjy7ROLwi5pMQ4sLIrQ7w-0'
 				})
 				.then(function() {
 					return gapi.client.request({

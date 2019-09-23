@@ -6,8 +6,8 @@
 	top: 475px;
 	transform: translate3d(-50%, -47%, 0);
 	overflow: hidden;
-	z-index: 2;
-	
+	z-index: 1;
+
 	@include mQ(1160px) {
 		display: none;
 	}
@@ -32,7 +32,7 @@
 		left: 0;
 		img {
 			left: 217px;
-    		top: 31px;
+			top: 31px;
 		}
 	}
 	&__casual {
@@ -42,13 +42,23 @@
 		z-index: 5;
 		img {
 			right: 235px;
-    		top: 31px;
+			top: 31px;
 		}
 		&__white-konin {
 			top: -37px !important;
 			right: 649px !important;
 			height: 24.3% !important;
 			width: 190px;
+			@include mQ(1480px) {
+				top: -28px !important;
+				right: 554px !important;
+			}
+			@include mQ(1250px) {
+				top: -26px !important;
+				right: 563px !important;
+				height: 18.6% !important;
+				width: 141px;
+			}
 		}
 	}
 }

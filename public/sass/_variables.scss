@@ -10,6 +10,7 @@ html {
 	position: absolute;
 	top: 73rem;
 	left: 50%;
+	z-index: -2;
 	transform: translateX(-50%);
 	@include mQ(1480px) {
 		display: none;
@@ -60,10 +61,9 @@ html {
 	top: 92rem;
 	z-index: 2;
 	cursor: pointer;
-	@include mQ(1160px){
+	@include mQ(1160px) {
 		visibility: hidden;
 	}
-	
 }
 .yellowArrowLeft {
 	left: 48.6%;
@@ -83,14 +83,15 @@ html {
 		left: -20px;
 		height: 17rem;
 	}
-	@include mQ(940px){
+	@include mQ(940px) {
 		height: 9rem;
 	}
-	@include mQ(660px){
-
+	@include mQ(490px) {
+		top: 350px;
 	}
-	@include mQ(450px){
-		top: 380px;
+	@include mQ(370px) {
+		top: 330px;
+		height: 7rem;
 	}
 }
 .purpleBubble {
@@ -123,19 +124,18 @@ html {
 		height: 306.2px;
 		left: -7%;
 		top: 106px;
-
 	}
-	@include mQ(860px){
+	@include mQ(860px) {
 		width: 231.2px;
 		height: 236.2px;
 		left: -5%;
 		top: 106px;
 	}
-	@include mQ(530px){
+	@include mQ(530px) {
 		width: 168px;
 		height: 156px;
 	}
-	@include mQ(370px){
+	@include mQ(370px) {
 		width: 146px;
 		height: 137px;
 		left: -9%;
@@ -151,54 +151,43 @@ html {
 	@include mQ(1480px) {
 		left: 10%;
 	}
-	@include mQ(1160px){
+	@include mQ(1160px) {
 		left: 40%;
-		top:21%;
+		top: 21%;
 	}
-	@include mQ(960px){
-		left: 40%;
-		top:14%;
-	}
-	@include mQ(720px){
+	@include mQ(960px) {
 		visibility: hidden;
 	}
-	
 }
 .small-pink-square {
-	@include mQ(1160px){
+	@include mQ(1160px) {
 		height: 8px;
 		width: 8px;
 		position: absolute;
-		top: 59%;
-    	left: 44%;
-    	z-index: 1;
-		background:#e9487e;
+		top: 580px;
+		left: 44%;
+		z-index: 1;
+		background: #e9487e;
 		transform: rotate(45deg);
 	}
-	@include mQ(450px){
-		height: 5px;
-    	width: 5px;
-    	top: 61%;
-   		left: 41%;
-   		background: #e9487e;
+	@include mQ(850px) {
+		top: 500px;
 	}
-	@include mQ(450px){
-		left:48%;
-		top:67%;
+	@include mQ(490px) {
+		top: 360px;
 	}
 }
 .small-pink-circle {
-	@include mQ(720px){
+	@include mQ(720px) {
 		height: 8px;
 		width: 8px;
 		position: absolute;
 		top: 10%;
-    	left: 62%;
-		background:#e9487e;
-		border-radius:50%;
+		left: 62%;
+		background: #e9487e;
+		border-radius: 50%;
 	}
-	@include mQ(650px){
-
+	@include mQ(650px) {
 	}
 }
 .blueDot {
@@ -211,17 +200,18 @@ html {
 	@include mQ(1480px) {
 		top: 24%;
 	}
-	@include mQ(1160px){
+	@include mQ(1160px) {
 		top: 10%;
 		left: 61%;
-		
 	}
-	@include mQ(720px){
-		visibility:hidden;	
+	@include mQ(720px) {
+		visibility: hidden;
 	}
-	
 }
-
+.purpleRibbon {
+	margin-left: 3rem;
+	margin-top: 4rem;
+}
 .yellow-box {
 	position: absolute;
 	width: 527.69px;
@@ -231,7 +221,7 @@ html {
 	transform: translate(-50%, -47%);
 	border: 16px solid #fbe751;
 	box-sizing: border-box;
-	z-index: 1;
+	z-index: 0;
 	@include mQ(1250px) {
 		height: 529px;
 		top: 515px;
@@ -251,16 +241,16 @@ html {
 		top: 180px;
 		right: -90px;
 	}
-	@include mQ (650px){
+	@include mQ (650px) {
 		top: 10px;
-    	right: -100px;
+		right: -100px;
 	}
-	@include mQ(540px){
+	@include mQ(570px) {
 		visibility: hidden;
 	}
 	// @include mQ(450px){
 	// 	right: -83px;
-    // 	height: 14.5rem;
+	// 	height: 14.5rem;
 	// }
 }
 .half-blue-circle {
@@ -272,19 +262,19 @@ html {
 	}
 	@include mQ(1160px) {
 		top: 290px;
-    	right: 51px;
-    	transform: scale(-1, -1);
+		right: 51px;
+		transform: scale(-1, -1);
 	}
-	@include mQ(650px){
+	@include mQ(650px) {
 		top: 115px;
 	}
-	@include mQ(540px){
+	@include mQ(570px) {
 		visibility: hidden;
 	}
 	// @include mQ(450px){
 	// 	top: 104px;
-    // 	height: 5rem;
-    // 	right: 44px;
+	// 	height: 5rem;
+	// 	right: 44px;
 	// }
 }
 .small-blue-square {
@@ -298,11 +288,11 @@ html {
 		top: 183px;
 		right: 50px;
 	}
-	@include mQ(650px){
+	@include mQ(650px) {
 		top: 15px;
-    	right: 46px;
+		right: 46px;
 	}
-	@include mQ(540px){
+	@include mQ(570px) {
 		visibility: hidden;
 	}
 	// @include mQ(450px){

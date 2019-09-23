@@ -39,14 +39,14 @@
 			bottom: 120px;
 		}
 	}
-	@include mQ(530px) {
+	@include mQ(570px) {
 		&::after {
-			left: 69px;
+			left: 65px;
 			width: 120px;
 			bottom: 108px;
 		}
 	}
-	@include mQ(450px) {
+	@include mQ(490px) {
 		height: 31rem;
 		&::after {
 			left: 55px;
@@ -79,10 +79,25 @@
 			position: relative;
 			left: 0;
 			height: 100%;
+			padding-right: 8rem;
+		}
+		@include mQ(900px) {
+			padding-right: 5rem;
+		}
+		@include mQ(870px) {
+			padding-right: 8rem;
+		}
+		@include mQ(760px) {
 			padding-right: 5rem;
 		}
 		@include mQ(650px) {
-			padding-right: 5rem;
+			padding-right: 6rem;
+		}
+		@include mQ(490px) {
+			padding-right: 7rem;
+		}
+		@include mQ(375px) {
+			padding-right: 4.5rem;
 		}
 
 		&__about {
@@ -93,39 +108,66 @@
 			letter-spacing: -0.01em;
 			align-self: flex-start;
 			margin-left: 4rem;
-			margin-top: 6rem;
+			margin-top: 4rem;
 			z-index: 2;
 			letter-spacing: 1px;
 			display: none;
 			font-family: 'Circe-bold';
 			@include mQ(1160px) {
 				display: flex;
+				flex-direction: column;
 				align-self: flex-end;
 				ul {
 					display: flex;
-					@include mQ(650px) {
-						margin-right: 37px;
-					}
-					@include mQ(540px) {
-						margin-top: -30px;
-						margin-bottom: 30px;
-						margin-right: -20px;
-					}
-					@include mQ(350px) {
-						margin-right: -33px;
-					}
+					justify-content: space-between;
 
 					li {
 						list-style: none;
+						@include mQ(530px) {
+							svg {
+								width: 35px !important;
+							}
+						}
 					}
 				}
+				&__number {
+					display: none;
+					@include mQ(1160px) {
+						&__link {
+							color: #00afc6;
+							text-decoration: none;
+						}
+						display: block;
+					}
+					@include mQ(530px) {
+						margin-top: -1rem;
+						font-size: 18px;
+					}
+					@include mQ(490px) {
+						margin-top: -2rem;
+						font-size: 13.8px;
+					}
+				}
+			}
+			@include mQ(650px) {
+				margin-right: 4.5rem;
+			}
+			@include mQ(570px) {
+				margin-right: 0;
+			}
+			@include mQ(530px) {
+				margin-top: 2rem;
+			}
+			@include mQ(490px) {
+				margin-top: 2rem;
+				margin-right: -2rem;
 			}
 		}
 
 		&__name {
 			align-self: flex-start;
 			margin-top: 4rem;
-			margin-bottom: 10rem;
+			margin-bottom: 8rem;
 			@include mQ(1480px) {
 				margin-left: 10rem;
 			}
@@ -154,13 +196,18 @@
 			width: 43.92px;
 			height: 50px;
 			left: 80%;
-			top: 440px;
+			top: 420px;
 			background: #ffffff;
 			z-index: 1;
 			transform: translateX(-46%);
 			@include mQ(1480px) {
 				height: 125px;
-				width: 190px;
+				width: 63px;
+				left: 70%;
+			}
+			@include mQ(1250px) {
+				
+				left: 75%;
 			}
 			@include mQ(1160px) {
 				visibility: hidden;
@@ -204,16 +251,17 @@
 				line-height: 2.4rem;
 			}
 			@include mQ(650px) {
-				margin-right: 0;
 				font-size: 15px;
-				line-height: 2rem;
-				margin-top: 1.5rem;
-				padding-right: 3rem;
+				line-height: 2.2rem;
+				margin-top: 1rem;
+				padding-right: 8rem;
+				margin-bottom: 0.6rem;
 			}
-			@include mQ(450px) {
+			@include mQ(490px) {
 				font-size: 11px;
 				line-height: 1.5rem;
 				margin-top: 0rem;
+				padding-right: 4rem;
 			}
 		}
 		&__text {
@@ -249,16 +297,13 @@
 				margin-right: 5px;
 			}
 			@include mQ(650px) {
-				width: 21rem;
+				width: 24rem;
 				margin-right: -42px;
 				font-size: 13px;
-				line-height: 1.5rem;
-			}
-			@include mQ(530px) {
-				line-height: 1.7rem;
+				line-height: 1.9rem;
 			}
 
-			@include mQ(450px) {
+			@include mQ(490px) {
 				width: 17rem;
 				margin-right: -47px;
 				line-height: 1.3rem;
@@ -278,7 +323,91 @@
 				display: none;
 			}
 		}
+		&__order-call {
+			width: 221px;
+			height: 40px;
+			background: #00afc6;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			align-self: flex-start;
+			margin-top: 21rem;
+			cursor: pointer;
+			z-index: 2;
+			position: relative;
+			@include mQ(1480px) {
+				margin-left: 8rem;
+			}
+			@include mQ(1250px) {
+				margin-left: 17rem;
+				margin-top: 15.4rem;
+			}
+			@include mQ(1160px) {
+				visibility: hidden;
+			}
 
+			&__triangle {
+				position: absolute;
+				right: -12px;
+			}
+			&__text {
+				color: white;
+				font-family: 'Circe-bold';
+				font-weight: bold;
+				font-size: 20px;
+				letter-spacing: -0.01em;
+				text-transform: uppercase;
+			}
+			&__form {
+				position: absolute;
+				right: -211px;
+				top: 0;
+				z-index: 5;
+				opacity: 0;
+				visibility: hidden;
+				@include mQ(1250px) {
+					right: 26px;
+					top: 50px;
+				}
+			}
+			&__input {
+				padding: 1.2rem;
+				border: 1px solid #00afc6;
+				&::placeholder {
+					font-family: 'Circe';
+					font-size: 17px;
+					letter-spacing: -0.01em;
+					color: #c4c4c4;
+					border-bottom: 1.4px solid #c4c4c4;
+				}
+			}
+			&__group {
+				margin-top: 1rem;
+				display: flex;
+				&__input {
+					padding: 1.2rem;
+					border: 1px solid #00afc6;
+					width: 140px;
+					margin-right: 1rem;
+					&::placeholder {
+						font-family: 'Circe';
+						font-size: 17px;
+						letter-spacing: -0.01em;
+						color: #c4c4c4;
+						border-bottom: 1.4px solid #c4c4c4;
+					}
+				}
+				&__btn {
+					flex-grow: 1;
+					background: #00afc6;
+					border: none;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					cursor: pointer;
+				}
+			}
+		}
 		&__conferanceyo {
 			visibility: hidden;
 			align-self: flex-start;
@@ -313,7 +442,7 @@
 				visibility: visible;
 				order: 1;
 				margin-left: 0;
-				margin-top: auto;
+				margin-top: -14rem;
 				align-self: flex-end;
 				font-size: 45px;
 				margin-right: 0;
@@ -336,18 +465,18 @@
 			}
 			@include mQ(650px) {
 				font-size: 20px;
-				margin-right: -.5rem;
-				margin-right: 0rem;
+				margin-right: 3.1rem;
+
 				&::after {
 					content: '';
 					top: 25px;
 				}
 			}
 			@include mQ(530px) {
-				margin-top: 6rem;
+				margin-top: -12rem;
 			}
-			@include mQ(450px) {
-				margin-top: 0;
+			@include mQ(490px) {
+				margin-top: -15rem;
 				font-size: 15px;
 				margin-right: 0;
 
@@ -376,11 +505,11 @@
 			@include mQ(720px) {
 				height: 200%;
 			}
-			@include mQ(530px) {
+			@include mQ(570px) {
 				height: 150%;
 				top: 28%;
 			}
-			@include mQ(450px) {
+			@include mQ(490px) {
 				height: 167%;
 				top: 28%;
 			}

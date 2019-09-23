@@ -1,8 +1,10 @@
 {
 	"name": "calendar",
+	"homepage":"http://evgeniykonin.ru/test/", 
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
+		"cocoen": "^2.0.5",
 		"date-fns": "^2.1.0",
 		"gapi-script": "0.0.5",
 		"moment": "^2.24.0",
@@ -26,8 +28,16 @@
 		"extends": "react-app"
 	},
 	"browserslist": {
-		"production": [ ">0.2%", "not dead", "not op_mini all" ],
-		"development": [ "last 1 chrome version", "last 1 firefox version", "last 1 safari version" ]
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
 	},
 	"devDependencies": {
 		"node-sass": "^4.12.0",
