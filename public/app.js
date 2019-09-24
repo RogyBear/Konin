@@ -1,6 +1,7 @@
 var btn = document.querySelectorAll('.btn');
 var purpleTransition = document.querySelector('.color-change-purple');
 var purpleBoxTransition = document.querySelector('.purple-box');
+var whiteBox = document.querySelector('.white-box');
 var whiteBoxTransition = document.querySelector('.white-box');
 var slideLeft = document.querySelector('.center-layout__suit');
 var slideRight = document.querySelector('.center-layout__casual');
@@ -15,7 +16,9 @@ var container = document.querySelector('.wrapper');
 var centerLayout = document.querySelector('.center-layout');
 
 //Mobile event listener
-var expandButton = document.querySelector('.purple-box__btn');
+var whiteBoxInfo = document.querySelector('.white-box__info__text');
+var expandPurpleButton = document.querySelector('.purple-box__btn');
+var expandWhiteButton = document.querySelector('.white-box__btn');
 var purpleBox = document.querySelector('.purple-box');
 var purpleText = document.querySelector('.purple-box__info__text');
 var purpleBtn = document.querySelector('.purple-box__btn');
@@ -92,10 +95,16 @@ var pos = container.clientWidth * 0.5;
 // 	}
 // });
 
-expandButton.addEventListener('click', function() {
-	purpleBox.classList.add('expandPurple');
-	purpleText.style.display = 'block';
-});
+// expandWhiteButton.addEventListener('click', function() {
+// 	whiteBox.classList.add('expandWhite');
+// 	whiteBoxInfo.classList.add('expandWhiteText');
+// 	whiteBoxInfo.style.display = 'block';
+// });
+
+// expandPurpleButton.addEventListener('click', function() {
+// 	purpleBox.classList.add('expandPurple');
+// 	purpleText.style.display = 'block';
+// });
 
 // HOUSE OF THE MOUSE
 

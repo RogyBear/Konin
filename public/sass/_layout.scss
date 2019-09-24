@@ -142,17 +142,19 @@ body {
 				font-family: 'Circe-bold';
 				padding-top: 7rem;
 				font-size: 9rem;
+				
 				@include mQ(860px) {
 					padding-top: 7rem;
 					font-size: 7rem;
 				}
 				@include mQ(720px) {
-					padding-top: 10rem;
-					font-size: 8rem;
+					padding-top: 8rem;
+					font-size: 8.9rem;				
 				}
 				@include mQ(480px) {
 					padding-top: 3rem;
-					font-size: 8rem;
+					font-size: 7.8rem;
+
 				}
 			}
 			font-family: 'Circe';

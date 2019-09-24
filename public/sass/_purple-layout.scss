@@ -54,7 +54,7 @@
 			width: 132px;
 		}
 	}
-	@include mQ(490px) {
+	@include mQ(540px) {
 		height: 30rem;
 	}
 	@include mQ(450px) {
@@ -69,6 +69,9 @@
 		&::after {
 			right: 39px;
 		}
+	}
+	@include mQ(390px){
+		height: 24rem;
 	}
 
 	@include mQ(370px) {
@@ -164,13 +167,16 @@
 		@include mQ(940px) {
 			padding-left: 7rem;
 		}
-		@include mQ(740px) {
-			padding-left: 7rem;
+		@include mQ(820px){
+			padding-left: 5rem;
+		}
+		@include mQ(775px) {
+			padding-left: 3rem;
 		}
 		@include mQ(690px) {
 			padding-left: 4rem;
 		}
-		@include mQ(370px) {
+		@include mQ(390px) {
 			padding-left: 1.5rem;
 		}
 
@@ -323,7 +329,11 @@
 			}
 			@include mQ(1160px) {
 				order: 1;
+				font-size: 4.2rem;
 				padding-left: 4rem;
+			}
+			@include mQ(1070px){
+				font-size: 3rem;
 			}
 			@include mQ(800px) {
 				padding-left: 2rem;
@@ -333,23 +343,26 @@
 			}
 			@include mQ(670px) {
 				line-height: 2;
-				font-size: 2rem;
+				font-size: 2.3rem;
 				width: 27rem;
 			}
-			@include mQ(535px) {
+			@include mQ(580px) {
 				line-height: 1.7;
-				font-size: 1.6rem;
+				font-size: 2rem;
 				width: 15rem;
 			}
-			@include mQ(490px) {
+			@include mQ(540px) {
 				font-size: 1.4rem;
 				padding-left: 0.5rem;
 			}
+			@include mQ(420px){
+				font-size: 1.2em;
+			}
 			@include mQ(370px) {
 				line-height: 1.7;
-				font-size: 1rem;
+				margin-top:0;
 				width: 15rem;
-				padding-left: 1rem;
+				padding-left: 0;
 			}
 		}
 		&__text {
@@ -372,6 +385,7 @@
 				line-height: 2.5rem;
 			}
 			@include mQ(1160px) {
+				visibility: hidden;
 				width: 30rem;
 				order: 2;
 				line-height: 2rem;
@@ -460,8 +474,8 @@
 				margin-right: 0;
 				align-self: flex-start;
 				transform: translate(0);
-				font-size: 45px;
-				margin-top: 10rem;
+				font-size: 70px;
+				margin-top: 15rem;
 				margin-bottom: 2rem;
 				&::after {
 					content: '';
@@ -474,14 +488,15 @@
 					z-index: -1;
 				}
 			}
+			@include mQ(1070px){
+				font-size: 60px;
+			}
 			@include mQ(670px) {
-				font-size: 30px;
+				font-size: 45px;
 				margin-bottom: 1rem;
 			}
-			@include mQ(535px) {
-				font-size: 28px;
-				margin-bottom: 0;
-				margin-top: 11rem;
+			@include mQ(580px) {
+				font-size: 42px;
 				&::after {
 					content: '';
 					width: 100%;
@@ -492,13 +507,21 @@
 					background: #e9487e;
 					z-index: -1;
 				}
+			}	
+			@include mQ(540px) {
+				margin-top: 14rem;
+				font-size: 35px;
 			}
-			@include mQ(490px) {
-				margin-top: 7rem;
+			@include mQ(420px) {
+				font-size: 30px;
 			}
-			@include mQ(490px) {
-				margin-top: 9rem;
+			@include mQ(390px){
+				margin-top: 11rem;
 			}
+			@include mQ(370px){
+				font-size: 23px;
+			}
+		
 
 			&__blue-box {
 				content: '';
