@@ -77,6 +77,9 @@ body {
 		@include mQ(1160px) {
 			display: flex;
 		}
+		@include mQ(730px) {
+			display: none;
+		}
 	}
 }
 
@@ -90,7 +93,8 @@ body {
 		justify-content: space-between;
 		padding-top: 4rem;
 	}
-	@include mQ(720px) {
+	@include mQ(730px) {
+		height:auto;
 		flex-direction: column;
 		align-items: center;
 	}
@@ -116,9 +120,9 @@ body {
 			@include mQ(860px) {
 				top: 93px;
 			}
-			@include mQ(720px) {
+			@include mQ(730px) {
 				right: -33px;
-				top: 135px;
+				top: 110px;
 			}
 			@include mQ(480px) {
 				visibility: hidden;
@@ -141,25 +145,28 @@ body {
 			&__bold {
 				font-family: 'Circe-bold';
 				padding-top: 7rem;
-				font-size: 9rem;
-				
-				@include mQ(860px) {
-					padding-top: 7rem;
-					font-size: 7rem;
-				}
-				@include mQ(720px) {
+				font-size: 7.1rem;
+				font-weight:bold;
+				@include mQ(950px) {
 					padding-top: 8rem;
-					font-size: 8.9rem;				
+					font-size: 6.5rem;
+				}
+				@include mQ(850px) {
+					padding-top: 7rem;
+					font-size: 5.2rem;
+				}
+				@include mQ(730px) {
+					padding-top: 8rem;
+					font-size: 6.5rem;
 				}
 				@include mQ(480px) {
 					padding-top: 3rem;
-					font-size: 7.8rem;
-
+					font-size: 5.7rem;
 				}
 			}
 			font-family: 'Circe';
-			line-height: .7;
-			font-size: 8rem;
+			line-height: 1;
+			font-size: 6.7rem;
 			color: #fff;
 			height: 28rem;
 			width: 42rem;
@@ -167,20 +174,21 @@ body {
 			margin-right: 6rem;
 			@include mQ(950px) {
 				width: 37rem;
+				font-size: 6.1rem;
 			}
-			@include mQ(860px) {
+			@include mQ(850px) {
 				height: 23rem;
 				width: 30rem;
-				font-size: 6rem;
+				font-size: 4.9rem;
 			}
-			@include mQ(720px) {
-				font-size: 8rem;
+			@include mQ(730px) {
 				height: 28rem;
 				width: 42rem;
 				margin-right: 0;
+				font-size: 6.1rem;
 			}
 			@include mQ(480px) {
-				font-size: 7rem;
+				font-size: 5.3rem;
 				height: 17rem;
 				width: 32rem;
 			}

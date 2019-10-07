@@ -35,7 +35,7 @@ class Calendar extends Component {
 				})
 				.then(function() {
 					return gapi.client.request({
-						path: `https://www.googleapis.com/calendar/v3/calendars/${`68d19lho66i1dklnm3e7lpg7fs@group.calendar.google.com`}/events`
+						path: `https://www.googleapis.com/calendar/v3/calendars/${`igmmi356rt0rtnimf8ims40si0@group.calendar.google.com`}/events`
 					});
 				})
 				.then(
@@ -158,7 +158,7 @@ class Calendar extends Component {
 			switch (el) {
 				case 'FreeBusy':
 					params = {
-						str: `Полу${'\u2011'}занат`,
+						str: `Частично${'\u2011'}занат`,
 						dayCode: 'purpleBlueDay',
 						start: startDay,
 						firstDay: i
@@ -186,7 +186,7 @@ class Calendar extends Component {
 
 			return (
 				<div style={params.firstDay === 0 ? { gridColumnStart: startDay } : null} className={params.dayCode}>
-					{i + 1} <span className="tooltiptext" >{params.str}</span>
+					{i + 1} <span className="tooltiptext">{params.str}</span>
 				</div>
 			);
 		});

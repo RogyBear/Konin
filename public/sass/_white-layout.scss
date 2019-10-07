@@ -13,105 +13,20 @@
 		position: relative;
 		width: 100%;
 		height: 45rem;
-		&::after {
-			content: '';
-			position: absolute;
-			top: 23rem;
-			right: 50px;
-			left: 135px;
-			width: 230px;
-			height: 220px;
-			border: 9px solid #fbe751;
-			z-index: -1;
-		}
 	}
-	@include mQ(870px) {
-		&::after {
-			left: 112px;
-			width: 210px;
-		}
+	@include mQ(730px) {
+		height: 36rem;
 	}
-	@include mQ(720px) {
-		height: 38rem;
-		&::after {
-			left: 92px;
-			width: 170px;
-			height: 100px;
-			top: 20rem;
-		}
+	@include mQ(550px) {
+		height: 27rem;
 	}
-	@include mQ(570px) {
-		&::after {
-			left: 65px;
-			width: 120px;
-		}
+	@include mQ(450px) {
+		height: 23rem;
 	}
-	@include mQ(490px) {
-		height: 31rem;
-		&::after {
-			left: 55px;
-			width: 83px;
-			height: 100px;
-			top: 15rem;
-			border: 6px solid #fbe751;
-		}
+	@include mQ(360px) {
+		height: 21rem;
 	}
-	@include mQ(370px) {
-		&::after {
-			left: 30px;
-			width: 82px;
-			height: 100px;
-			bottom: 49px;
-			border: 6px solid #fbe751;
-		}
-	}
-	&__btn {
-		display: none;
-		@include mQ(1160px) {
-			display: none;
-			position: absolute;
-			bottom: 10px;
-			right: 430px;
-			width: 0;
-			height: 0;
-			border-top: 15px solid transparent;
-			border-bottom: 15px solid transparent;
-			border-left: 20px solid #fbe751;
-			cursor: pointer;
-			z-index: 5;
-			&::after {
-				content: 'Подробнее';
-				position: absolute;
-				left: -111px;
-				top: -3px;
-				color: grey;
-				font-family: 'Circe';
-				font-size: 15px;
-				line-height: 9px;
-				letter-spacing: -0.01em;
-				opacity: .5;
-			}
-		}
 
-		@include mQ(640px) {
-			bottom: 22px;
-		}
-		@include mQ(535px) {
-			bottom: 20px;
-		}
-		@include mQ(490px) {
-			display: block;
-			border-top: 10px solid transparent;
-			border-bottom: 10px solid transparent;
-			border-left: 19px solid #fbe751;
-			right: 83px;
-			bottom: 12px;
-		}
-		@include mQ(400px) {
-			bottom: 13px;
-			right: 56px;
-		}
-	}
 	&__info {
 		display: flex;
 		flex-direction: column;
@@ -119,37 +34,20 @@
 		position: absolute;
 		left: 280px;
 		@include mQ(1480px) {
-			left: 60px;
+			left: 0;
+			position: absolute;
+			margin: 0 auto;
+			width: 690px;
+		}
+		@include mQ(1250px) {
+			width: 625px;
 		}
 		@include mQ(1160px) {
-			position: relative;
 			left: 0;
+			position: relative;
+			margin: 0 auto;
+			width: 89vw;
 			height: 100%;
-			padding-right: 8rem;
-		}
-		@include mQ(900px) {
-			padding-right: 5rem;
-		}
-		@include mQ(870px) {
-			padding-right: 8rem;
-		}
-		@include mQ(820px) {
-			padding-right: 5rem;
-		}
-		@include mQ(800px){
-			padding-right: 2rem;
-		}
-		@include mQ(650px) {
-			padding-right: 6rem;
-		}
-		@include mQ(500px) {
-			padding-right: 4rem;
-		}
-		@include mQ(375px) {
-			padding-right: 4.8rem;
-		}
-		@include mQ(360px){
-   	 		margin-right: 0rem;
 		}
 
 		&__about {
@@ -159,8 +57,8 @@
 			line-height: 2.8rem;
 			letter-spacing: -0.01em;
 			align-self: flex-start;
-			margin-left: 4rem;
-			margin-top: 4rem;
+
+			margin-top: 2vw;
 			z-index: 2;
 			letter-spacing: 1px;
 			display: none;
@@ -178,6 +76,10 @@
 						@include mQ(530px) {
 							svg {
 								width: 35px !important;
+							}
+							img {
+								width: 22px !important;
+								height: 22px !important;
 							}
 						}
 					}
@@ -201,59 +103,46 @@
 					}
 				}
 			}
-			@include mQ(650px) {
-				margin-right: 4.5rem;
-			}
-			@include mQ(570px) {
-				margin-right: 0;
-			}
-			@include mQ(530px) {
-				margin-top: 2rem;
-			}
-			@include mQ(490px) {
-				margin-top: 2rem;
-				margin-right: -2rem;
-			}
 		}
 
 		&__name {
 			align-self: flex-start;
 			margin-top: 4rem;
-			margin-bottom: 8rem;
+			margin-bottom: 9rem;
 			@include mQ(1480px) {
-				margin-left: 10rem;
+				margin-left: 16rem;
 			}
 			@include mQ(1250px) {
 				width: 300px;
 				margin-bottom: 14rem;
-				margin-left: 20rem;
+
+				margin-left: 26rem;
 			}
 			@include mQ(1160px) {
 				position: absolute;
-				top: 15px;
+				top: 2vw;
 				left: 30px;
 				margin: 0;
-				width: 250px;
+				width: 30vw;
 			}
-			@include mQ(530px) {
-				width: 190px;
-			}
-			@include mQ(450px) {
-				width: 140px;
-				left: 10px;
+			@include mQ(400px) {
+				top: 3vw;
+				left: 12px;
+				margin: 0;
+				width: 33vw;
 			}
 		}
 		&__whiteBox {
 			position: absolute;
 			width: 43.92px;
-			height: 50px;
+			height: 140px;
 			left: 80%;
-			top: 420px;
+			top: 311px;
 			background: #ffffff;
-			z-index: 1;
+			z-index: 0;
 			transform: translateX(-46%);
 			@include mQ(1480px) {
-				height: 125px;
+				height: 220px;
 				width: 63px;
 				left: 70%;
 			}
@@ -269,7 +158,7 @@
 			position: relative;
 			z-index: 1;
 			margin-right: 8rem;
-			margin-bottom: 3rem;
+			margin-bottom: 1rem;
 			font-family: 'Trajan Pro 3-bold', 'sans-serif';
 			font-weight: bold;
 			font-size: 39px;
@@ -277,6 +166,7 @@
 			text-align: right;
 			color: #e9487e;
 			text-shadow: 1px 1px 0px #00afc6;
+			width: 26rem;
 			@include mQ(1480px) {
 				margin-right: 16rem;
 			}
@@ -286,67 +176,34 @@
 			}
 			@include mQ(1160px) {
 				order: 2;
-				align-self: flex-end;
-				text-align: left;
-				line-height: 36px;
-				margin-right: 23rem;
-				font-size: 40px;
-				margin-top: 2rem;
-				margin-bottom: 1rem;
-				margin-right: 0;
-				padding-right: 22rem;
-			}
-			@include mQ(1070px){
-				font-size: 35px;
-			}
-			@include mQ(960px){
-				font-size: 30px;
+				align-self: flex-start;
+				text-align: initial;
+				font-size: 3.5vw;
 				margin-top: 1rem;
-				padding-right: 17rem;
-				line-height: 3.5rem;
+				margin-left: 39vw;
+				width: 50rem;
 			}
-			@include mQ(870px) {
-				margin-right: 0;
-				
-				line-height: 3.5rem;
+			@include mQ(730px) {
+				margin-top: -1rem;
 			}
-			@include mQ(775px){
-				font-size: 23px;
-			}
-			@include mQ(660px) {
-				line-height: 2.2rem;
-				margin-top: 1rem;
-			    padding-right: 5rem;
-				margin-bottom: 0.6rem;
-			}
-			@include mQ(570px) {
-				padding-right: 3rem;
-			}
-			@include mQ(490px) {
-				font-size: 18px;
-				line-height: 1.7rem;
-				margin-top: 0rem;
-				padding-right: 8rem;
-			}
-			@include mQ(450px){
-				padding-right: 4rem;
-			}
-			@include mQ(405px){
-				font-size: 16px;
-				padding-right: 1rem;
-				margin-top: -0.7rem;
+			@include mQ(550px) {
+				margin-top: -2rem;
 			}
 		}
 		&__text {
 			font-family: 'Circe', 'sans-serif';
 			position: relative;
-			z-index: 2;
+
 			height: 22rem;
 			width: 53rem;
 			z-index: 1;
 			font-size: 2rem;
 			line-height: 2.8rem;
 			letter-spacing: -0.01em;
+			color: #542660;
+			span {
+				font-weight: bold;
+			}
 			@include mQ(1480px) {
 				margin-left: 8rem;
 			}
@@ -354,49 +211,15 @@
 				font-size: 15px;
 				line-height: 2.3rem;
 				width: 35rem;
-				margin-left: 20rem;
+				margin-left: 13rem;
 			}
 			@include mQ(1160px) {
 				visibility: hidden;
-				order: 3;
-				margin-left: 0rem;
-				align-self: flex-end;
-				height: 17rem;
-				margin-right: 3rem;
-				line-height: 2rem;
-				width: 36rem;
 			}
-			@include mQ(870px) {
-				width: 28rem;
-				margin-right: 5px;
-			}
-			@include mQ(650px) {
-				width: 24rem;
-				margin-right: -42px;
-				font-size: 13px;
-				line-height: 1.9rem;
-			}
-
-			@include mQ(490px) {
-				width: 17rem;
-				margin-right: -47px;
-				line-height: 1.6rem;
-				font-size: 13px;
-				overflow: hidden;
-				-webkit-line-clamp: 5;
-				display: -webkit-box;
-				-webkit-box-orient: vertical;
-				height: 8rem;
-			}
-
-			span {
-				font-weight: bold;
-			}
-			color: #542660;
 		}
 		#root {
 			@include mQ(1480px) {
-				margin-left: 8.5rem;
+				margin-left: 12rem;
 			}
 			@include mQ(1160px) {
 				display: none;
@@ -415,10 +238,10 @@
 			z-index: 2;
 			position: relative;
 			@include mQ(1480px) {
-				margin-left: 8rem;
+				margin-left: 12rem;
 			}
 			@include mQ(1250px) {
-				margin-left: 17rem;
+				margin-left: 20rem;
 				margin-top: 15.4rem;
 			}
 			@include mQ(1160px) {
@@ -497,18 +320,7 @@
 			color: #e9487e;
 			text-shadow: 1px 1px 0px #00afc6;
 			position: relative;
-			&__blue-box {
-				content: '';
-				position: absolute;
-				display: block;
-				width: 222.6px;
-				height: 15.15px;
-				top: 1.7rem;
-				left: -6px;
-				background: #fbe751;
-				z-index: -2;
-				opacity: 0;
-			}
+
 			@include mQ(1480px) {
 				margin-left: 50%;
 				transform: translateX(-50%);
@@ -520,101 +332,140 @@
 			@include mQ(1160px) {
 				visibility: visible;
 				order: 1;
-				margin-left: 0;
-				margin-top: -8rem;
-				align-self: flex-end;
-				font-size: 60px;
-				margin-right: 0;
+				margin-left: 34vw;
+				margin-top: -30rem;
+				font-size: 6vw;
 				transform: translate(0);
-				margin-right: 3rem;
 				margin-bottom: 1rem;
 				&::after {
 					content: '';
-    				height: 6px;
-					width: 100%;
+					height: 5px;
+					width: 82%;
 					position: absolute;
-					top: 35px;
-					left: 0;
+					top: 46px;
+					left: 12vw;
 					background: #80d7e3;
 				}
 			}
-			@include mQ(1070px){
-				font-size: 55px;
-			}
-			@include mQ(960px){
-				font-size: 45px;
-			}
-			@include mQ(870px) {
-				font-size: 42px;
-				margin-right: 3.3rem;
-			}
-			@include mQ(775px){
-				margin-right: 1rem;
-			}
-			@include mQ(660px) {
-				font-size:30px;
-				margin-right: -2rem;
+			@include mQ(730px) {
+				margin-top: -33rem;
 				&::after {
-					content: '';
-					top: 25px;
+					top: 34px;
+					left: 10vw;
 				}
 			}
-			@include mQ(570px) {
-				margin-right: -3rem;
-			}
-			@include mQ(530px) {
-				margin-top: -6rem;
-				
-			}
-			@include mQ(490px) {
-				margin-top: -10rem;
-				font-size: 30px;
-				margin-right:-3rem;
+			@include mQ(550px) {
+				margin-top: -38rem;
 				&::after {
 					content: '';
-					height: 4px;
-					top: 25px;
+					height: 3px;
+					top: 28px;
 				}
-			}
-			@include mQ(450px){
-				font-size: 25px;
-			}
-			@include mQ(405px){
-				font-size: 20px;
-			}
-			@include mQ(320px){
-				margin-right:-4rem;
 			}
 		}
+		&__complex {
+			display: none;
+			@include mQ(1160px) {
+				display: block;
+				&::after {
+					content: '';
+					position: absolute;
+					top: 26rem;
+					left: 10.6%;
+					z-index: -1;
+					width: 18vw;
+					height: 90px;
+					border: 9px solid #fbe751;
+				}
+			}
+			@include mQ(850px) {
+				&::after {
+					top: 21rem;
+				}
+			}
+			@include mQ(650px) {
+				&::after {
+					top: 18rem;
+					border: 6px solid #fbe751;
+				}
+			}
+			@include mQ(550px) {
+				&::after {
+					top: 14rem;
+					width: 21vw;
+					border: 4px solid #fbe751;
+				}
+			}
+			@include mQ(400px) {
+				&::after {
+					top: 12rem;
+				}
+			}
 
+			// @include mQ(500px) {
+			// 	&::after {
+			// 		top: 19vh;
+			// 		height: 50px;
+			// 		border: 4px solid #fbe751;
+			// 	}
+			// }
+		}
 		&__suit {
 			display: none;
 			@include mQ(1160px) {
 				display: block;
-				display: block;
-				top: 10rem;
-				left: -1%;
+				top: 12rem;
+				left: -3vw;
 				position: absolute;
-				height: 124rem;
+				height: 100vw;
 			}
-			@include mQ(870px) {
-				height: 112rem;
-				left: -3%;
+			@include mQ(550px) {
+				top: 7rem;
+				height: 125vw;
+				left: -7vw;
 			}
-			@include mQ(720px) {
-				height: 94rem;
+		}
+
+		// Mobile
+
+		&__mobile-yellow-triangle {
+			visibility: hidden;
+			@include mQ(1160px) {
+				visibility: visible;
+				transform: rotate(-90deg);
+				position: absolute;
+				top: 70%;
+				left: 63%;
+				height: 4vw;
 			}
-			@include mQ(570px) {
-				height: 68rem;
-				top: 14rem;
+			@include mQ(360px) {
+				top: 75%;
 			}
-			@include mQ(490px) {
-				height: 53rem;
-				top: 9rem;
+		}
+		&__mobile-pink-circle {
+			visibility: hidden;
+			@include mQ(1160px) {
+				visibility: visible;
+				position: absolute;
+				top: 40%;
+				left: 10%;
+				border-radius: 50%;
+				height: 1vw;
+				width: 1vw;
+				background: #e9487e;
 			}
-			@include mQ(370px) {
-				height: 47rem;
-				left: -26px;
+		}
+		&__mobile-pink-square {
+			visibility: hidden;
+			@include mQ(1160px) {
+				visibility: visible;
+				transform: rotate(45deg);
+				position: absolute;
+				bottom: 10%;
+				left: 50%;
+				height: 1vw;
+				width: 1vw;
+				background: #e9487e;
 			}
 		}
 	}

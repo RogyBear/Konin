@@ -26,29 +26,7 @@ $minTablet: 767px;
 		left: -50px;
 		top: 43%;
 	}
-	// &:before {
-	// 	content: "";
-	// 	position: absolute;
 
-	// 	left: -9px;
-	// 	top: 50%;
-	// 	margin-top: -10px;
-	// 	background-color: white;
-	// 	transform: rotate(45deg);
-	// 	transition: all 0.1s ease-in-out;
-	// }
-	// &:after {
-	// 	content: "";
-	// 	position: absolute;
-	// 	width: 12px;
-	// 	height: 12px;
-	// 	left: -5px;
-	// 	top: 50%;
-	// 	margin-top: -6px;
-	// 	background-color: white;
-	// 	transform: rotate(45deg);
-	// 	transition: all 0.1s ease-in-out;
-	// }
 	&.draggable {
 		@include mQ(1160px) {
 			display: none;
@@ -65,68 +43,6 @@ $minTablet: 767px;
 			left: -9px;
 			margin-top: -10px;
 			background-color: #555;
-		}
-	}
-}
-
-.split {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: strech;
-	p {
-		flex-basis: 100%;
-		@include media('tabletUpwards') {
-			flex-basis: 48%;
-		}
-	}
-}
-
-.center-layout {
-	.comparison-slider {
-		position: relative;
-		width: 100%;
-		margin: 0;
-		border: 5px white solid;
-		box-sizing: border-box;
-		> img {
-			width: 100%;
-			height: auto;
-			display: block;
-		}
-
-		.overlay {
-			display: none;
-			position: absolute;
-			width: 250px;
-			bottom: 20px;
-			right: 20px;
-			background-color: rgba(0, 0, 0, 0.4);
-			padding: 10px;
-			box-sizing: border-box;
-			background: #ddd;
-			text-align: right;
-			@include media('tabletUpwards') {
-				display: block;
-			}
-		}
-
-		.resize {
-			position: absolute;
-			top: 0;
-			left: 0;
-			height: 100%;
-			width: 50%;
-			overflow: hidden;
-			> img {
-				display: block;
-			}
-			.overlay {
-				right: auto;
-				left: 20px;
-				text-align: left;
-			}
 		}
 	}
 }
